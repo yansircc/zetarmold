@@ -15,8 +15,14 @@ export default function InjectionProductionEquipmentsPage() {
           />
           <div className="container mx-auto px-4 py-8">
             <h2 className="mb-6 text-center text-2xl font-bold">
-              Injection Production Equipment
+              Injection Molding Production Equipments
             </h2>
+            <p>
+              We currently have 35 injection molding machines, with six of them
+              housed in a Class M8 dust-free room. Additionally, we have
+              facilities for assembly and logo printing. Our largest machine, an
+              1850T, can handle parts weighing up to 10 kg.
+            </p>
             <InjectionEquipmentTable
               equipments={injectionProductionEquipments}
             />
