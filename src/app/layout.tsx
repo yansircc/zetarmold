@@ -19,25 +19,28 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://zetarmold.com'),
   title: {
-    default: 'Relative - Modern Next.js Template',
-    template: '%s | Relative',
+    default:
+      'Zetar Mold - Professional Plastic Injection Mold Manufacturer Since 2005',
+    template: '%s | Zetar Mold',
   },
   description:
-    'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
+    'ZetarMold is a top-end turnkey plastic injection mold & injection molding manufacturer. Focus on plastic injection mold & injection molding manufacturing since 2005.',
   keywords: [
-    'Next.js',
-    'React',
-    'JavaScript',
-    'TypeScript',
-    'TailwindCSS',
-    'Template',
-    'Shadcn/UI',
-    'Web Development',
+    'Injection Mold',
+    'Injection Molding',
+    'Plastic Injection',
+    'Mold Manufacturing',
+    'Silicone Rubber Molded',
+    'Rapid Prototyping',
+    'Post Processing',
+    'ISO 13485',
+    'ISO 9001',
   ],
-  authors: [{ name: 'Relative Team' }],
-  creator: 'Relative Team',
-  publisher: 'Relative',
+  authors: [{ name: 'Zetar Mold' }],
+  creator: 'Zetar Mold',
+  publisher: 'Zetar Industry Co.,Ltd',
   robots: {
     index: true,
     follow: true,
@@ -54,26 +57,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/favicon/favicon.ico' }],
   },
   openGraph: {
-    title: 'Relative - Modern Next.js Template',
+    title: 'Zetar Mold - Professional Plastic Injection Mold Manufacturer',
     description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
-    siteName: 'Relative',
+      'ZetarMold is a top-end turnkey plastic injection mold & injection molding manufacturer. Focus on plastic injection mold & injection molding manufacturing since 2005.',
+    siteName: 'Zetar Mold',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Relative - Modern Next.js Template',
+        alt: 'Zetar Mold - Professional Plastic Injection Mold Manufacturer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Relative - Modern Next.js Template',
+    title: 'Zetar Mold - Professional Plastic Injection Mold Manufacturer',
     description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
+      'ZetarMold is a top-end turnkey plastic injection mold & injection molding manufacturer. Focus on plastic injection mold & injection molding manufacturing since 2005.',
     images: ['/og-image.jpg'],
-    creator: '@Relative',
+    creator: '@ZetarMold',
   },
 };
 
