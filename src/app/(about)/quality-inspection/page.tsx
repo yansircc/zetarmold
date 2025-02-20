@@ -4,7 +4,7 @@ import QualityInspectionProcess from './process';
 
 export default function QualityInspection() {
   return (
-    <section className="py-16">
+    <section className="py-16 md:py-24 lg:py-32">
       <div className="container flex flex-col gap-16 lg:px-16">
         <PageHeader
           title="Quality Inspection"

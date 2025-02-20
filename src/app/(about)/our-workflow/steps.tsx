@@ -1,14 +1,12 @@
-import Image from 'next/image';
 import { workflowSteps } from './data';
+import Image from 'next/image';
 
-export default function OurWorkflow() {
+export default function WorkflowSteps() {
   return (
     <section className="py-32">
       <div className="container">
         <div className="mx-auto flex max-w-screen-md flex-col justify-center gap-7 md:text-center">
-          <h1 className="text-2xl md:text-4xl">
-            Mold Design & Manufacturing Workflow
-          </h1>
+          <h2 className="text-2xl md:text-4xl">Our Workflow Process</h2>
           <p className="text-muted-foreground text-sm md:text-base">
             Follow our systematic approach to mold design and manufacturing,
             ensuring quality and efficiency at every step.
