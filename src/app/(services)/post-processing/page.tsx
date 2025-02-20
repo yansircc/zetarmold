@@ -1,14 +1,30 @@
-export default function OurHistory() {
+import { ProcessTimeline } from './process';
+import { postProcessingServices } from './data';
+import SectionHeader from '@/components/section-header';
+import { Settings } from 'lucide-react';
+
+export default function PostProcessing() {
+  const firstThreeServices = postProcessingServices.slice(0, 3);
+  const lastThreeServices = postProcessingServices.slice(3);
+
   return (
-    <main className="container flex min-h-[calc(100vh-4rem)] items-center justify-center py-12">
-      <div className="mx-auto max-w-2xl space-y-6 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Post Processing</h1>
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          ZetarMold was founded in 2020 by a team of experienced professionals
-          who are dedicated to providing the highest quality injection molding
-          services to their clients.
-        </p>
+    <section className="py-32">
+      <div className="border-y">
+        <SectionHeader
+          headingLevel="h1"
+          iconTitle="Post Processing"
+          title="Comprehensive Post-Processing Solutions"
+          icon={Settings}
+          description="We provide a wide range of finishes for different forms and functions, including Painting, Plating, Laser Marking, Logo Printing, Heat Staking, and Ultrasonic Welding services tailored to your specific requirements."
+        />
       </div>
-    </main>
+      <div className="container border-x lg:!px-0">
+        <ProcessTimeline services={firstThreeServices} imagePosition="right" />
+        <ProcessTimeline services={lastThreeServices} imagePosition="left" />
+      </div>
+      <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
+        <div className="container h-full w-full border-x"></div>
+      </div>
+    </section>
   );
 }
