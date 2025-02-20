@@ -1,30 +1,16 @@
-import { ArrowRight } from 'lucide-react';
 import { teamFeatures } from './data';
 import Image from 'next/image';
-import Link from 'next/link';
-
+import PageHeader from '@/components/page-header';
 export default function OurTeam() {
   return (
     <section className="py-16">
       <div className="container flex flex-col gap-16 lg:px-16">
-        <div className="lg:max-w-xl">
-          <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
-            Our Professional Team
-          </h2>
-          <p className="text-muted-foreground mb-8 lg:text-lg">
-            Zetar boasts a team of 8 senior engineers specializing in injection
-            molding product design and mold design, complemented by 30 engineers
-            skilled in mold making and injection molding, along with a group of
-            highly experienced senior workers.
-          </p>
-          <Link
-            href="/contact"
-            className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
-          >
-            Contact our team
-            <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
+        <PageHeader
+          title="Our Professional Team"
+          description="Zetar boasts a team of 8 senior engineers specializing in injection molding product design and mold design, complemented by 30 engineers skilled in mold making and injection molding, along with a group of highly experienced senior workers."
+          linkText="Contact our team"
+          href="/contact"
+        />
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {teamFeatures.map((feature) => (
             <div
