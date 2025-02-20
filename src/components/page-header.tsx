@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { type ClassValue } from 'clsx';
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -9,6 +11,7 @@ interface PageHeaderProps {
   href: string;
   linkText: string;
   headingLevel?: HeadingLevel;
+  className?: ClassValue;
 }
 
 export default function PageHeader({
@@ -17,11 +20,12 @@ export default function PageHeader({
   href,
   linkText,
   headingLevel = 'h1',
+  className,
 }: PageHeaderProps) {
   const Heading = headingLevel;
 
   return (
-    <div className="lg:max-w-xl">
+    <div className={cn('lg:max-w-xl', className)}>
       <Heading className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
         {title}
       </Heading>

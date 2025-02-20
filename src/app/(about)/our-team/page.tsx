@@ -10,6 +10,7 @@ export default function OurTeam() {
           description="Zetar boasts a team of 8 senior engineers specializing in injection molding product design and mold design, complemented by 30 engineers skilled in mold making and injection molding, along with a group of highly experienced senior workers."
           linkText="Contact our team"
           href="/contact"
+          className="md:text-center lg:mx-auto lg:max-w-3xl"
         />
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {teamFeatures.map((feature) => (
