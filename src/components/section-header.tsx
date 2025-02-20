@@ -1,15 +1,18 @@
 import * as React from 'react';
 
-import { LucideIcon } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 import TitleTag from '@/components/title-tag';
 import { cn } from '@/lib/utils';
+
+type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   icon: LucideIcon;
   iconTitle: string;
   description: React.ReactNode;
+  headingLevel?: HeadingLevel;
 }
 
 const SectionHeader = ({
@@ -18,7 +21,10 @@ const SectionHeader = ({
   icon: Icon,
   iconTitle,
   description,
+  headingLevel = 'h2',
 }: SectionHeaderProps) => {
+  const Heading = headingLevel;
+
   return (
     <div
       className={cn(
@@ -27,9 +33,9 @@ const SectionHeader = ({
       )}
     >
       <TitleTag title={iconTitle} icon={Icon} />
-      <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
+      <Heading className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
         {title}
-      </h2>
+      </Heading>
       <p className="text-muted-foreground max-w-[600px] tracking-[-0.32px]">
         {description}
       </p>
