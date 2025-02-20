@@ -1,5 +1,5 @@
 import { injectionProductionEquipments } from './data';
-import { InjectionEquipmentTable } from './InjectionEquipmentTable';
+import { InjectionEquipmentTable } from './table';
 import PageHeader from '@/components/page-header';
 
 export default function InjectionProductionEquipmentsPage() {
@@ -9,7 +9,7 @@ export default function InjectionProductionEquipmentsPage() {
         <div className="container flex flex-col gap-8 lg:px-16">
           <PageHeader
             title="Injection Molding Production Equipments"
-            description="We currently have 35 injection molding machines, with six of them housed in a Class M8 dust-free room. Additionally, we have facilities for assembly and logo printing. Our largest machine, an 1850T, can handle parts weighing up to 10 kg."
+            description="Our facility features 35 injection molding machines including 6 in a Class M8 dust-free room. With machines up to 1850T capacity, we can produce parts weighing up to 10 kg."
             linkText="Quick Quote"
             href="/contact"
           />

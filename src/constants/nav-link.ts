@@ -1,5 +1,5 @@
 import {
-  LucideProps,
+  type LucideProps,
   Building2,
   Users,
   ClipboardCheck,
@@ -55,9 +55,15 @@ const aboutItems: DropdownItem[] = [
     icon: ClipboardCheck,
   },
   {
-    title: 'Advanced Equipment',
-    href: '/our-equipments',
-    description: 'Explore our advanced molding equipment.',
+    title: 'Mold Making Equipments',
+    href: '/mold-making-equipments',
+    description: 'Explore our advanced mold making equipment.',
+    icon: Factory,
+  },
+  {
+    title: 'Injection Production Equipments',
+    href: '/injection-production-equipments',
+    description: 'Explore our advanced injection production equipment.',
     icon: Factory,
   },
   {

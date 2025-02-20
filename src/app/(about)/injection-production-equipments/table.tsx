@@ -2,7 +2,6 @@ import { type InjectionProductionEquipment } from './data';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
