@@ -67,9 +67,15 @@ const aboutItems: DropdownItem[] = [
     icon: Factory,
   },
   {
-    title: 'Efficient Workflow',
-    href: '/our-workflow',
-    description: 'Our streamlined production workflow.',
+    title: 'Injection Molding Workflow',
+    href: '/injection-molding-workflow',
+    description: 'Our injection molding workflow.',
+    icon: Workflow,
+  },
+  {
+    title: 'Mold Making Workflow',
+    href: '/mold-making-workflow',
+    description: 'Our mold making workflow.',
     icon: Workflow,
   },
 ];
