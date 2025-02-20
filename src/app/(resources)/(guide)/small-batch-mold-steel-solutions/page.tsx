@@ -4,7 +4,7 @@ import Faqs from './faqs';
 
 export default function SmallBatchMoldSteelSolutions() {
   return (
-    <section className="py-32">
+    <section className="py-16 md:py-24 lg:py-32">
       <div className="container flex flex-col gap-16 lg:px-16">
         <PageHeader
           title="Small Batch Mold Steel Solutions"
