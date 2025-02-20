@@ -3,7 +3,7 @@ import Image from 'next/image';
 import PageHeader from '@/components/page-header';
 export default function OurTeam() {
   return (
-    <section className="py-16">
+    <section className="py-32">
       <div className="container flex flex-col gap-16 lg:px-16">
         <PageHeader
           title="Our Professional Team"
