@@ -1,7 +1,7 @@
-import { type relatedPosts } from './RelatedPosts';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
+import { type relatedPosts } from './relatedPosts';
 interface Props {
   posts: relatedPosts[];
 }

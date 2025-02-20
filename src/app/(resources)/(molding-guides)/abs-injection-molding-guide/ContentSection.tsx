@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { type SectionData } from './SectionData';
+import { type SectionData } from './sectionData';
 import {
   Table,
   TableBody,

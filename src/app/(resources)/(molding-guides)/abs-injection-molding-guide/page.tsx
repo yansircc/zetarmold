@@ -1,8 +1,8 @@
 import PageHeader from '@/components/page-header';
-import { relatedPosts } from './RelatedPosts';
 import { BlogPosts } from './BlogPosts';
-import { absSections } from './SectionData';
 import { ContentSection } from './ContentSection';
+import { relatedPosts } from './relatedPosts';
+import { absSections } from './sectionData';
 
 export default function ABSInjectionMoldingGuide() {
   return (
