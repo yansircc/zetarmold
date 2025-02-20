@@ -5,7 +5,15 @@ import { type postProcessingServices } from './data';
 import DiagonalPattern from '@/components/diagonal-pattern';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
-import { Paintbrush, Layers, Zap, Sticker, Hammer, Radio } from 'lucide-react';
+import {
+  Paintbrush,
+  Layers,
+  Zap,
+  Sticker,
+  Hammer,
+  Radio,
+  Play,
+} from 'lucide-react';
 import { ImageDialog } from '@/components/simple-dialog';
 import { useState } from 'react';
 
@@ -93,21 +101,35 @@ export function ProcessTimeline({
                   </div>
                   <div className="relative grid flex-1 grid-cols-[auto_1fr_auto] items-stretch">
                     <DiagonalPattern className="h-full w-6 lg:w-10" />
-                    <div className="relative m-3">
-                      <Image
-                        src={service.imageUrl}
-                        alt={service.title}
-                        fill
-                        className="cursor-pointer rounded-md object-cover shadow-md transition-transform hover:scale-[1.02] lg:rounded-xl lg:shadow-lg dark:invert"
-                        onClick={() =>
-                          setSelectedImage({
-                            url: service.imageUrl,
-                            title: service.title,
-                            description: service.description,
-                            videoId: service.videoId,
-                          })
-                        }
-                      />
+                    <div className="group relative m-3">
+                      <div className="relative aspect-[4/5] w-full overflow-hidden">
+                        <button
+                          className="absolute inset-0 block h-full w-full"
+                          onClick={() =>
+                            setSelectedImage({
+                              url: service.imageUrl,
+                              title: service.title,
+                              description: service.description,
+                              videoId: service.videoId,
+                            })
+                          }
+                        >
+                          <Image
+                            src={service.imageUrl}
+                            alt={service.title}
+                            fill
+                            className="rounded-md object-cover shadow-md transition-transform group-hover:scale-[1.02] lg:rounded-xl lg:shadow-lg dark:invert"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                          {service.videoId && (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="flex size-16 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-transform group-hover:scale-110">
+                                <Play className="size-8" />
+                              </div>
+                            </div>
+                          )}
+                        </button>
+                      </div>
                     </div>
                     <DiagonalPattern className="w-6 lg:w-10" />
                   </div>

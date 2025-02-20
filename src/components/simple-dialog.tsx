@@ -37,7 +37,7 @@ export function ImageDialog({
   }, [isOpen]);
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog modal open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-screen-lg">
         <DialogHeader>
           <DialogTitle className="text-xl tracking-tight lg:text-2xl">
@@ -53,7 +53,7 @@ export function ImageDialog({
             <div className="relative aspect-video">
               {isPlaying && videoId ? (
                 <iframe
-                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
                   title={title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -65,15 +65,16 @@ export function ImageDialog({
                     src={imageUrl}
                     alt={title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                     className="rounded-md object-cover shadow-md lg:rounded-xl lg:shadow-lg"
                     priority
                   />
-                  {videoId && (
+                  {videoId && !isPlaying && (
                     <button
                       onClick={() => setIsPlaying(true)}
-                      className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100"
+                      className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity hover:bg-black/30"
                     >
-                      <div className="flex size-16 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm">
+                      <div className="flex size-16 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-transform hover:scale-110">
                         <Play className="size-8" />
                       </div>
                     </button>

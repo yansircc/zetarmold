@@ -8,7 +8,10 @@ export default function PostProcessing() {
   const lastThreeServices = postProcessingServices.slice(3);
 
   return (
-    <section className="py-32">
+    <section>
+      <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
+        <div className="container h-full w-full border-x"></div>
+      </div>
       <div className="border-y">
         <SectionHeader
           headingLevel="h1"
