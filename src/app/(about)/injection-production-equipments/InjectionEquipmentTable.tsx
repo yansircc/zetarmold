@@ -1,4 +1,13 @@
 import { type InjectionProductionEquipment } from './data';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 interface Props {
   equipments: InjectionProductionEquipment[];
@@ -7,36 +16,39 @@ interface Props {
 export function InjectionEquipmentTable({ equipments }: Props) {
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full border border-gray-300 bg-white">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border px-4 py-2">No.</th>
-            <th className="border px-4 py-2">Brand</th>
-            <th className="border px-4 py-2">Machine Tonnage</th>
-            <th className="border px-4 py-2">Injection Volume</th>
-            <th className="border px-4 py-2">Quantity</th>
-            <th className="border px-4 py-2">Usage Area</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table>
+        <TableCaption>List of Injection Production Equipment</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[80px] text-center">No.</TableHead>
+            <TableHead>Brand</TableHead>
+            <TableHead className="text-center">Machine Tonnage</TableHead>
+            <TableHead className="text-center">Injection Volume</TableHead>
+            <TableHead className="text-center">Quantity</TableHead>
+            <TableHead>Usage Area</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {equipments.map((equipment) => (
-            <tr key={equipment.no} className="hover:bg-gray-50">
-              <td className="border px-4 py-2 text-center">{equipment.no}</td>
-              <td className="border px-4 py-2">{equipment.brand}</td>
-              <td className="border px-4 py-2 text-center">
+            <TableRow key={equipment.no} className="hover:bg-muted/50">
+              <TableCell className="text-center font-medium">
+                {equipment.no}
+              </TableCell>
+              <TableCell className="font-medium">{equipment.brand}</TableCell>
+              <TableCell className="text-center">
                 {equipment.machineTonnage}
-              </td>
-              <td className="border px-4 py-2 text-center">
+              </TableCell>
+              <TableCell className="text-center">
                 {equipment.injectionVolume}
-              </td>
-              <td className="border px-4 py-2 text-center">
+              </TableCell>
+              <TableCell className="text-center">
                 {equipment.quantity}
-              </td>
-              <td className="border px-4 py-2">{equipment.usageArea}</td>
-            </tr>
+              </TableCell>
+              <TableCell>{equipment.usageArea}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 }
