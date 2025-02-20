@@ -11,7 +11,7 @@ import {
 import DiagonalPattern from '@/components/diagonal-pattern';
 import { Play } from 'lucide-react';
 
-interface ImageDialogProps {
+interface SimpleDialogProps {
   isOpen: boolean;
   onClose: () => void;
   imageUrl: string;
@@ -20,14 +20,14 @@ interface ImageDialogProps {
   videoId?: string;
 }
 
-export function ImageDialog({
+export function SimpleDialog({
   isOpen,
   onClose,
   imageUrl,
   title,
   description,
   videoId,
-}: ImageDialogProps) {
+}: SimpleDialogProps) {
   const [isPlaying, setIsPlaying] = React.useState(false);
 
   React.useEffect(() => {

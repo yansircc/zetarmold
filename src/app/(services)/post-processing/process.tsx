@@ -14,7 +14,7 @@ import {
   Radio,
   Play,
 } from 'lucide-react';
-import { ImageDialog } from '@/components/simple-dialog';
+import { SimpleDialog } from '@/components/simple-dialog';
 import { useState } from 'react';
 
 const iconMap = {
@@ -144,7 +144,7 @@ export function ProcessTimeline({
       </Tabs>
 
       {showDialog && (
-        <ImageDialog
+        <SimpleDialog
           isOpen={true}
           onClose={() => setSelectedImage(null)}
           imageUrl={selectedImage.url}

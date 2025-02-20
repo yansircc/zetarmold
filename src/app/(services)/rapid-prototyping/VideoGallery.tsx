@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Play } from 'lucide-react';
-import { ImageDialog } from '@/components/simple-dialog';
+import { SimpleDialog } from '@/components/simple-dialog';
 import { type VideoData } from './data';
 
 interface Props {
@@ -46,7 +46,7 @@ export function VideoGallery({ videos }: Props) {
       </div>
 
       {selectedVideo && (
-        <ImageDialog
+        <SimpleDialog
           isOpen={true}
           onClose={() => setSelectedVideo(null)}
           imageUrl={`https://img.youtube.com/vi/${getYouTubeVideoId(
