@@ -17,7 +17,6 @@ export function InjectionEquipmentTable({ equipments }: Props) {
   return (
     <div className="overflow-x-auto">
       <Table>
-        <TableCaption>List of Injection Production Equipment</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[80px] text-center">No.</TableHead>
