@@ -1,14 +1,26 @@
-export default function OurHistory() {
+import PageHeader from '@/components/page-header';
+import { prototypeVideos } from './data';
+import { VideoGallery } from './VideoGallery';
+
+export default function RapidPrototyping() {
   return (
-    <main className="container flex min-h-[calc(100vh-4rem)] items-center justify-center py-12">
-      <div className="mx-auto max-w-2xl space-y-6 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Rapid Prototyping</h1>
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          ZetarMold was founded in 2020 by a team of experienced professionals
-          who are dedicated to providing the highest quality injection molding
-          services to their clients.
-        </p>
+    <section className="py-16">
+      <div className="container flex flex-col gap-16 lg:px-16">
+        <PageHeader
+          className="pb-16"
+          title="Rapid Prototyping Service"
+          description="Zetar often asked to assist in the prototype development of new product ideas of customers with CNC Machining,  3D Printing and low volume injection molding. We offer a number of
+
+rapid prototyping options that are available to you to help validate form, fit, and function
+
+of your future injection molded parts design before injection mold making."
+          href="/contact"
+          linkText="Quick Quote on Rapid Prototyping"
+        />
+        <div className="container mx-auto px-4">
+          <VideoGallery videos={prototypeVideos} />
+        </div>
       </div>
-    </main>
+    </section>
   );
 }
