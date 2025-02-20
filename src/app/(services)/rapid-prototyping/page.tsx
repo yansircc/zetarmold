@@ -17,9 +17,9 @@ of your future injection molded parts design before injection mold making."
           href="/contact"
           linkText="Quick Quote on Rapid Prototyping"
         />
-      </div>
-      <div className="container mx-auto px-4">
-        <VideoGallery videos={prototypeVideos} />
+        <div className="container mx-auto px-4">
+          <VideoGallery videos={prototypeVideos} />
+        </div>
       </div>
     </section>
   );
