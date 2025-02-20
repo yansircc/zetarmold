@@ -11,6 +11,10 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'zetarmold.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'shadcnblocks.com',
         pathname: '/images/block/**',
       },
