@@ -14,6 +14,11 @@ const nextConfig = {
         hostname: 'shadcnblocks.com',
         pathname: '/images/block/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'library.shadcnblocks.com',
+        pathname: '/images/block/**',
+      },
     ],
   },
 };
