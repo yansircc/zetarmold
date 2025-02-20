@@ -6,17 +6,15 @@ export default function InjectionProductionEquipmentsPage() {
   return (
     <>
       <section className="py-16 md:py-24 lg:py-32">
-        <div className="container flex flex-col gap-16 lg:px-16">
+        <div className="container flex flex-col gap-8 lg:px-16">
           <PageHeader
-            title="Plastic Injection Mold Manufacturing Since 2005"
-            description=""
+            title="Injection Molding Process Flowchart"
+            description="The injection molding process is a precise manufacturing technique for producing diverse plastic products. This flowchart outlines key steps, starting with customer order analysis and production scheduling. It involves selecting machinery, preparing materials, and purchasing raw materials. Mold setup requires careful calibration and testing. This flowchart highlights the essential phases in delivering high-quality products."
             linkText="Quick Quote"
             href="/contact"
+            className="max-w-none lg:max-w-[66.666667%]"
           />
           <div className="container mx-auto px-4 py-8">
-            <h2 className="mb-6 text-center text-2xl font-bold">
-              Injection Molding Process Flowchart
-            </h2>
             <InjectionMoldingFlowchart steps={productionFlowSteps} />
           </div>
         </div>
