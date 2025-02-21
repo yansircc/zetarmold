@@ -6,6 +6,7 @@ export default function HowItWorks() {
     <TextWrapper
       title="How Overmolding Works"
       description="Overmolding is a tricky process that has a bunch of steps and needs you to plan and do it right. Here's a quick look at how overmolding works"
+      background="gray"
     >
       <Faqs
         faqs={[

@@ -10,7 +10,7 @@ import Solutions from './solutions';
 
 export default function Overmolding() {
   return (
-    <PageWrapper {...basicInfo}>
+    <PageWrapper {...basicInfo} background="inverse">
       <WhatItIs />
       <HowItWorks />
       <BondingChart />

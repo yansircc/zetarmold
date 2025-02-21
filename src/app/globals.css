@@ -107,6 +107,28 @@
   body {
     font-family: var(--font-inter), sans-serif;
   }
+
+  /* Theme background variants */
+  .bg-inverse {
+    /* @apply bg-[#162556] text-white; */
+    @apply bg-slate-800 text-zinc-100;
+  }
+
+  .bg-accent-solid {
+    @apply bg-accent text-white;
+  }
+
+  .bg-muted-solid {
+    @apply bg-slate-100;
+  }
+
+  .bg-primary-solid {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .bg-secondary-solid {
+    @apply bg-secondary;
+  }
 }
 
 @layer components {
