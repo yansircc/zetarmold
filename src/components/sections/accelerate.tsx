@@ -8,7 +8,7 @@ import {
   Users,
   Cpu,
   Rocket,
-  LucideIcon,
+  type LucideIcon,
 } from 'lucide-react';
 
 import DiagonalPattern from '../diagonal-pattern';

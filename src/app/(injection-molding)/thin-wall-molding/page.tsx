@@ -1,14 +1,36 @@
-export default function OurHistory() {
+export default function Demo() {
   return (
-    <main className="container flex min-h-[calc(100vh-4rem)] items-center justify-center py-12">
-      <div className="mx-auto max-w-2xl space-y-6 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Thin Wall Molding</h1>
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          ZetarMold was founded in 2020 by a team of experienced professionals
-          who are dedicated to providing the highest quality injection molding
-          services to their clients.
-        </p>
+    <div className="relative">
+      {/* Sticky header */}
+      <div
+        className="sticky z-50 bg-green-500 p-4 text-white"
+        style={{
+          position: 'sticky',
+          top: '64px', // Account for navbar height
+          height: 'fit-content',
+        }}
+      >
+        This is a sticky header
       </div>
-    </main>
+
+      {/* Content sections */}
+      <div className="relative">
+        {Array.from({ length: 10 }).map((_, index) => (
+          <div
+            key={index}
+            className={`border-b border-gray-200 p-8 ${
+              index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+            }`}
+          >
+            <h2 className="text-xl font-semibold">Section {index + 1}</h2>
+            <p className="mt-2">
+              This is some content to demonstrate scrolling. The green header
+              above should stick to the top as you scroll through these
+              sections.
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

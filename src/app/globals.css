@@ -12,7 +12,6 @@
   --color-foreground: hsl(var(--foreground));
   --color-foreground2: hsl(var(--foreground-2));
 
-
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
@@ -188,9 +187,6 @@
 
 html,
 body {
-  overflow-x: hidden;
   scroll-behavior: smooth;
-}
-body {
   position: relative;
 }

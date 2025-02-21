@@ -8,7 +8,7 @@ import {
   Building,
   BadgeDollarSign,
   BadgeCheck,
-  LucideIcon,
+  type LucideIcon,
 } from 'lucide-react';
 
 import SectionHeader from '../section-header';

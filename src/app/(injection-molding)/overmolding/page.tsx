@@ -4,6 +4,7 @@ import BondingChart from './bonding-chart';
 import HowItWorks from './how-it-works';
 import WhatItIs from './what-it-is';
 import Benifits from './benifits';
+import Applications from './applications';
 
 export default function Overmolding() {
   return (
@@ -12,6 +13,7 @@ export default function Overmolding() {
       <HowItWorks />
       <BondingChart />
       <Benifits />
+      <Applications />
     </PageWrapper>
   );
 }

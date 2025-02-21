@@ -9,6 +9,7 @@ interface TextWrapperProps {
   youtubeId?: string;
   children?: React.ReactNode;
   className?: string;
+  isSticky?: boolean;
 }
 
 export function TextWrapper({
@@ -19,6 +20,7 @@ export function TextWrapper({
   youtubeId,
   children,
   className,
+  isSticky = false,
 }: TextWrapperProps) {
   return (
     <section className={cn('mx-auto max-w-screen-lg py-8', className)}>
@@ -37,9 +39,17 @@ export function TextWrapper({
             className={cn(
               'flex flex-col items-center gap-8 md:gap-12',
               imagePosition === 'left' ? 'md:flex-row' : 'md:flex-row-reverse',
+              isSticky ? 'md:items-start' : 'md:items-center',
             )}
           >
-            <div className="w-full flex-1">
+            <div
+              className={cn(
+                'w-full flex-1',
+                isSticky &&
+                  imagePosition === 'left' &&
+                  'md:sticky md:top-20 md:h-fit',
+              )}
+            >
               <ImageWithDialog
                 image={image}
                 title={title ?? ''}
