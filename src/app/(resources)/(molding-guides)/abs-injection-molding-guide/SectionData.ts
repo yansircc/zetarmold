@@ -257,13 +257,7 @@ export const absSections: SectionData[] = [
       {
         title: 'Advantages of ABS materials:',
         content:
-          '① Great Flowability: ABS has great flowability, which makes it perfect for complex mold designs.\n' +
-          '② Great Dimensional Stability: ABS can keep its dimensions and shape even after it cools.\n' +
-          '③ Great Impact Resistance: ABS is known for its great impact resistance, which makes it perfect for applications that need impact resistance.\n' +
-          '④ Low Warpage: ABS is less likely to get deformed or warped during the molding process, which makes sure the product looks good and is high quality.\n' +
-          '⑤ Good Surface Finish: ABS has a smooth surface finish, which makes it perfect for applications that need a good surface finish.\n' +
-          '⑥ Good Colorability: ABS can be colored easily, which makes it perfect for applications that need a specific color.\n' +
-          '⑦ Good Processability: ABS can be processed easily, which makes it perfect for applications that need a specific color.',
+          '① Great Flowability: ABS has great flowability, which makes it perfect for complex mold designs.\n ② Great Dimensional Stability: ABS can keep its dimensions and shape even after it cools.\n ③ Great Impact Resistance: ABS is known for its great impact resistance, which makes it perfect for applications that need impact resistance.\n ④ Low Warpage: ABS is less likely to get deformed or warped during the molding process, which makes sure the product looks good and is high quality.\n ⑤ Good Surface Finish: ABS has a smooth surface finish, which makes it perfect for applications that need a good surface finish.\n ⑥ Good Colorability: ABS can be colored easily, which makes it perfect for applications that need a specific color.\n ⑦ Good Processability: ABS can be processed easily, which makes it perfect for applications that need a specific color.',
       },
       {
         title: 'Challenges in ABS Injection Molding Process:',
