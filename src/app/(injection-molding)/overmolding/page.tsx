@@ -6,6 +6,8 @@ import WhatItIs from './what-it-is';
 import Benifits from './benifits';
 import Applications from './applications';
 import Checklist from './tips';
+import Solutions from './solutions';
+
 export default function Overmolding() {
   return (
     <PageWrapper {...basicInfo}>
@@ -15,6 +17,7 @@ export default function Overmolding() {
       <Benifits />
       <Applications />
       <Checklist />
+      <Solutions />
     </PageWrapper>
   );
 }
