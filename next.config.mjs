@@ -26,7 +26,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'zetarmold.com',
-        pathname: '/wp-content/uploads/**',
+        pathname: '/wp-content/**',
       },
     ],
   },
