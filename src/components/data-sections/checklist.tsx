@@ -1,13 +1,16 @@
+import { type BackgroundVariant, cn, getBackgroundStyles } from '@/lib/utils';
+
 interface ChecklistProps {
   tips: { id: number; content: string }[];
+  background?: BackgroundVariant;
 }
 
-export function Checklist({ tips }: ChecklistProps) {
+export function Checklist({ tips, background = 'default' }: ChecklistProps) {
   return (
     <div className="mx-auto max-w-3xl">
       <div
         id="checklist-content"
-        className="rounded-lg border bg-white p-6 dark:bg-zinc-950"
+        className={cn('rounded-lg border p-6', getBackgroundStyles(background))}
       >
         <div className="space-y-4">
           {tips.map((tip) => (

@@ -15,8 +15,12 @@ import {
 
 export default function Benifits() {
   return (
-    <TextWrapper title="What are the Benefits of Overmolding?">
+    <TextWrapper
+      title="What are the Benefits of Overmolding?"
+      background="gray"
+    >
       <FeatureList
+        background="default"
         props={[
           {
             icon: <BeakerIcon className="size-6" />,

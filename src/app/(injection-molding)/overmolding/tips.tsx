@@ -57,26 +57,7 @@ const tips: Array<{ id: number; content: string }> = [
 
 export default function Tips() {
   return (
-    <TextWrapper title="10 Tips For Overmolding Design">
-      {/* <div className="mx-auto max-w-3xl">
-        <div className="border-border/50 bg-card rounded-lg border p-6">
-          <div className="space-y-4">
-            {tips.map((tip) => (
-              <div
-                key={tip.id}
-                className="group hover:border-primary/50 hover:bg-muted/50 flex items-start gap-4 rounded-md border-l-2 border-transparent px-4 py-3 transition-all"
-              >
-                <span className="text-foreground/40 font-mono text-xl tabular-nums">
-                  {String(tip.id).padStart(2, '0')}
-                </span>
-                <p className="text-foreground/80 pt-1 text-sm leading-relaxed">
-                  {tip.content}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
+    <TextWrapper title="10 Tips For Overmolding Design" background="gray">
       <Checklist tips={tips} />
     </TextWrapper>
   );
