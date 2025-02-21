@@ -17,7 +17,7 @@ import {
   DialogContent,
   DialogOverlay,
 } from '@/components/ui/dialog';
-import { Timer, ZoomIn, Zap, CheckCircle, Play } from 'lucide-react';
+import { CheckCircle, Play } from 'lucide-react';
 
 interface Props {
   section: SectionData;
@@ -28,7 +28,7 @@ export function ContentSection({ section, index }: Props) {
   const isEven = index % 2 === 0;
   const firstImage = section.images?.[0];
   const otherImages = section.images?.slice(1);
-  const hasMedia = section.video || firstImage;
+  const hasMedia = section.video ?? firstImage;
 
   return (
     <div className="py-16">
