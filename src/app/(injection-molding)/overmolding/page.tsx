@@ -1,14 +1,17 @@
-export default function OurHistory() {
+import PageWrapper from '@/components/page-wrapper';
+import { basicInfo } from './data';
+import BondingChart from './bonding-chart';
+import HowItWorks from './how-it-works';
+import WhatItIs from './what-it-is';
+import Benifits from './benifits';
+
+export default function Overmolding() {
   return (
-    <main className="container flex min-h-[calc(100vh-4rem)] items-center justify-center py-12">
-      <div className="mx-auto max-w-2xl space-y-6 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Overmolding</h1>
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          ZetarMold was founded in 2020 by a team of experienced professionals
-          who are dedicated to providing the highest quality injection molding
-          services to their clients.
-        </p>
-      </div>
-    </main>
+    <PageWrapper {...basicInfo}>
+      <WhatItIs />
+      <HowItWorks />
+      <BondingChart />
+      <Benifits />
+    </PageWrapper>
   );
 }

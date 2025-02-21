@@ -23,6 +23,11 @@ const nextConfig = {
         hostname: 'library.shadcnblocks.com',
         pathname: '/images/block/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'zetarmold.com',
+        pathname: '/wp-content/uploads/**',
+      },
     ],
   },
 };
