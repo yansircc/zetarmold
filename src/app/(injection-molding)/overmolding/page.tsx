@@ -5,7 +5,7 @@ import HowItWorks from './how-it-works';
 import WhatItIs from './what-it-is';
 import Benifits from './benifits';
 import Applications from './applications';
-
+import Checklist from './tips';
 export default function Overmolding() {
   return (
     <PageWrapper {...basicInfo}>
@@ -14,6 +14,7 @@ export default function Overmolding() {
       <BondingChart />
       <Benifits />
       <Applications />
+      <Checklist />
     </PageWrapper>
   );
 }

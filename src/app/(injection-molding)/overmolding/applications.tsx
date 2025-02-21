@@ -56,13 +56,3 @@ export default function Applications() {
     </TextWrapper>
   );
 }
-
-// Handware tools: Overmolding can be used to make hand tools like wrenches, pliers, and screwdrivers, knives, saw blades, and drill bits tougher and easier to hold.
-
-// Medical Devices: Overmolding is used in medical devices like syringes, needles, and implantable devices, where precision and accuracy are crucial.
-
-// Automotive: Overmolding is used in car stuff like dashboards, door handles, and trim components, where you need them to last and work good.
-
-// Industrial Equipment: Overmolding is used in industrial equipment like machines, pumps, and valves where you need them to be tough and work good.
-
-// Consumer Products: Overmolding is used in consumer products like toys, appliances, and electronics, where looks and how it works are important.
