@@ -12,12 +12,17 @@ import {
   Cable,
   Palette,
 } from 'lucide-react';
+import type { BackgroundVariant } from './types';
 
-export default function Benifits() {
+interface BenifitsProps {
+  background?: BackgroundVariant;
+}
+
+export default function Benifits({ background = 'default' }: BenifitsProps) {
   return (
     <TextWrapper
       title="What are the Benefits of Overmolding?"
-      background="gray"
+      background={background}
     >
       <FeatureList
         background="default"

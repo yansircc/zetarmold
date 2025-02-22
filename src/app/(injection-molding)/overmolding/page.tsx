@@ -12,11 +12,11 @@ export default function Overmolding() {
   return (
     <PageWrapper {...basicInfo} background="inverse">
       <WhatItIs />
-      <HowItWorks />
+      <HowItWorks background="gray" />
       <BondingChart />
-      <Benifits />
+      <Benifits background="gray" />
       <Applications />
-      <Checklist />
+      <Checklist background="gray" />
       <Solutions />
     </PageWrapper>
   );

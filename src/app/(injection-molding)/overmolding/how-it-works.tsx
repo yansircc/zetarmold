@@ -1,12 +1,19 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import Faqs from '@/components/data-sections/faqs';
+import type { BackgroundVariant } from './types';
 
-export default function HowItWorks() {
+interface HowItWorksProps {
+  background?: BackgroundVariant;
+}
+
+export default function HowItWorks({
+  background = 'default',
+}: HowItWorksProps) {
   return (
     <TextWrapper
       title="How Overmolding Works"
       description="Overmolding is a tricky process that has a bunch of steps and needs you to plan and do it right. Here's a quick look at how overmolding works"
-      background="gray"
+      background={background}
     >
       <Faqs
         faqs={[

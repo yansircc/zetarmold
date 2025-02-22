@@ -7,8 +7,15 @@ import {
   Factory, // For industrial equipment
   ShoppingBag, // For consumer products
 } from 'lucide-react';
+import type { BackgroundVariant } from './types';
 
-export default function Applications() {
+interface ApplicationsProps {
+  background?: BackgroundVariant;
+}
+
+export default function Applications({
+  background = 'default',
+}: ApplicationsProps) {
   return (
     <TextWrapper
       title="What are the Applications of Overmolding?"
@@ -17,6 +24,7 @@ export default function Applications() {
       youtubeId="6gAjMdkEd2s"
       imagePosition="left"
       isSticky={true}
+      background={background}
     >
       <FeatureList
         props={[

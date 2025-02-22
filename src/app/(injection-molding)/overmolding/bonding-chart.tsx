@@ -1,9 +1,19 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import { DataTable } from '@/components/data-sections/data-table';
+import type { BackgroundVariant } from './types';
 
-export default function BondingChart() {
+interface BondingChartProps {
+  background?: BackgroundVariant;
+}
+
+export default function BondingChart({
+  background = 'default',
+}: BondingChartProps) {
   return (
-    <TextWrapper title="Overmolding Material Bonding Chart">
+    <TextWrapper
+      title="Overmolding Material Bonding Chart"
+      background={background}
+    >
       <p>
         You can bond overmolded materials together, but you need to make sure
         the materials work together to get the bond strength you want. If you
