@@ -1,6 +1,10 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
+import type { BackgroundVariant } from './types';
+interface WhatItIsProps {
+  background?: BackgroundVariant;
+}
 
-export default function WhatItIs() {
+export default function WhatItIs({ background = 'default' }: WhatItIsProps) {
   return (
     <TextWrapper
       title="What is Overmolding?"
@@ -8,6 +12,7 @@ export default function WhatItIs() {
       material over top of another material or substrate."
       image="https://zetarmold.com/wp-content/uploads/2024/05/Overmolding1.jpg"
       imagePosition="left"
+      background={background}
     >
       <p>
         The first material is usually made of a different material or has a

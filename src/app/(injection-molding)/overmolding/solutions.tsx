@@ -2,7 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import { DataTable } from '@/components/data-sections/data-table';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
-
+import type { BackgroundVariant } from './types';
 interface Solution {
   observation: string;
   causes: string[];
@@ -86,11 +86,16 @@ const solutionsData: Solution[] = [
   },
 ];
 
-export default function Solutions() {
+interface SolutionsProps {
+  background?: BackgroundVariant;
+}
+
+export default function Solutions({ background = 'default' }: SolutionsProps) {
   return (
     <TextWrapper
       title="Overmolding Troubleshooting Guide"
       description="The most common problems you'll run into with overmolding are: Adhesion problems, Incomplete filling of the substrate or overmolding, Flashing. Here's what you can do to fix these problems."
+      background={background}
     >
       <div className="w-full space-y-12">
         {solutionsData.map((solution, index) => {

@@ -1,5 +1,10 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import { Checklist } from '@/components/data-sections/checklist';
+import type { BackgroundVariant } from './types';
+
+interface TipsProps {
+  background?: BackgroundVariant;
+}
 
 // Simplified tips array without categories
 const tips: Array<{ id: number; content: string }> = [
@@ -55,9 +60,9 @@ const tips: Array<{ id: number; content: string }> = [
   },
 ];
 
-export default function Tips() {
+export default function Tips({ background = 'default' }: TipsProps) {
   return (
-    <TextWrapper title="10 Tips For Overmolding Design" background="gray">
+    <TextWrapper title="10 Tips For Overmolding Design" background={background}>
       <Checklist tips={tips} />
     </TextWrapper>
   );
