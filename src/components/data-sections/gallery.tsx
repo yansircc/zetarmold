@@ -22,7 +22,6 @@ const GalleryItemComponent = ({ item }: { item: GalleryItem }) => {
           title={item.title}
           description={item.description}
           youtubeId={item.youtubeId}
-          className="rounded-xl border"
         />
       </div>
       <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">

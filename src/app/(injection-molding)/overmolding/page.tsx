@@ -1,7 +1,7 @@
 import { Chart } from './chart';
 import { HowItWorks } from './how-it-works';
 import { WhatItIs } from './what-it-is';
-import { Benifits } from './benifits';
+import { Benefits } from './benefits';
 import { Applications } from './applications';
 import { Tips } from './tips';
 import { Solutions } from './solutions';
@@ -14,7 +14,7 @@ export default function Overmolding() {
       <WhatItIs />
       <HowItWorks background="gray" />
       <Chart />
-      <Benifits background="gray" />
+      <Benefits background="gray" />
       <Applications />
       <Tips background="gray" />
       <Solutions />

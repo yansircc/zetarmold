@@ -34,17 +34,14 @@ export function ImageWithDialog({
     <>
       <button
         onClick={() => setIsDialogOpen(true)}
-        className={cn(
-          'group relative w-full min-[960px]:aspect-video min-[960px]:w-[400px]',
-          className,
-        )}
+        className={cn('group relative w-full', className)}
       >
         <div className="relative h-0 w-full pb-[56.25%]">
           <Image
             src={imageUrl}
             alt={title}
             fill
-            className="absolute top-0 left-0 rounded-xl border object-cover"
+            className="absolute top-0 left-0 h-full w-full rounded-xl border object-cover"
           />
         </div>
         {youtubeId && (

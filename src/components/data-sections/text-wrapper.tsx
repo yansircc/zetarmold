@@ -46,7 +46,7 @@ export function TextWrapper({
         {(title ?? description) && (
           <div
             className={cn(
-              'container mx-auto flex max-w-screen-md flex-col justify-center gap-7 text-center lg:max-w-xl lg:px-16',
+              'mx-auto flex max-w-screen-md flex-col justify-center gap-7 text-center lg:max-w-xl lg:px-16',
               titleAlign === 'left' && 'text-left',
               titleAlign === 'right' && 'text-right',
             )}
