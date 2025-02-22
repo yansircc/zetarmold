@@ -6,14 +6,16 @@ import {
 } from '@/components/ui/accordion';
 import { generateId } from '@/app/utils/generateId';
 
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
 interface FaqsProps {
-  faqs: {
-    question: string;
-    answer: string;
-  }[];
+  faqs: Faq[];
 }
 
-export default function Faqs({ faqs }: FaqsProps) {
+export function Faqs({ faqs }: FaqsProps) {
   const faqsWithIds = faqs.map((faq) => ({
     ...faq,
     id: generateId(faq.question),
