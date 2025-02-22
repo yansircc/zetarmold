@@ -1,13 +1,13 @@
-import Related from './related';
-import Faqs from './faqs';
-import { basicInfo } from './data';
-import PageWrapper from '@/components/page-wrapper';
+import { Faqs } from './faqs/ui';
+import { PageHeader } from './page-header';
+import { RelatedPosts } from './related-posts';
 
 export default function SmallBatchMoldSteelSolutions() {
   return (
-    <PageWrapper {...basicInfo}>
+    <main>
+      <PageHeader background="inverse" />
       <Faqs />
-      <Related />
-    </PageWrapper>
+      <RelatedPosts />
+    </main>
   );
 }
