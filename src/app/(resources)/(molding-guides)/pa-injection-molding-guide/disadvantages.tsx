@@ -13,12 +13,18 @@ import {
   Recycle,
   Palette,
 } from 'lucide-react';
-
-export default function Disadvantages() {
+import { type BackgroundVariant } from './types';
+interface DisadvantagesProps {
+  background?: BackgroundVariant;
+}
+export default function Disadvantages({
+  background = 'default',
+}: DisadvantagesProps) {
   return (
     <TextWrapper
       title="What are the disadvantages of PA Injection Molding?"
       description="The use of PA (Polyamide) in injection molding has several notable disadvantages that can impact the quality and performance of the molded parts. Here are the key drawbacks:"
+      background={background}
     >
       <FeatureList
         props={[

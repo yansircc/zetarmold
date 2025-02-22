@@ -1,13 +1,18 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import Faqs from '@/components/data-sections/faqs';
+import { type BackgroundVariant } from './types';
 
-export default function Difference() {
+interface DifferenceProps {
+  background?: BackgroundVariant;
+}
+export default function Difference({
+  background = 'default',
+}: DifferenceProps) {
   return (
     <TextWrapper
       title="What are the different types of PA materials?"
-      description="PA (Polyamide), commonly known as Nylon, is a family of synthetic polymers with various types and characteristics. These materials are versatile, offering a wide range of mechanical, thermal, and chemical properties that make them suitable for numerous applications, from textiles to automotive parts. Below is a detailed description of the main types of PA materials, their properties, and applications:
-
-"
+      description="PA (Polyamide), commonly known as Nylon, is a family of synthetic polymers with various types and characteristics. These materials are versatile, offering a wide range of mechanical, thermal, and chemical properties that make them suitable for numerous applications, from textiles to automotive parts. Below is a detailed description of the main types of PA materials, their properties, and applications:"
+      background={background}
     >
       <Faqs
         faqs={[

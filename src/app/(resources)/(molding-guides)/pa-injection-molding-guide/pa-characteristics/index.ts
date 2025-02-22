@@ -1,0 +1,1 @@
+export { PaCharacteristics } from './ui';

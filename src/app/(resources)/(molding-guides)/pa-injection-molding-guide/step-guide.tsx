@@ -1,11 +1,15 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import FeatureCard from '@/components/data-sections/feature-card';
-
-export default function StepGuide() {
+import { type BackgroundVariant } from './types';
+interface StepGuideProps {
+  background?: BackgroundVariant;
+}
+export default function StepGuide({ background = 'default' }: StepGuideProps) {
   return (
     <TextWrapper
       title="How to Perform PA Injection Molding: A Step-by-Step Guide"
       description="Injection molding is an efficient and versatile manufacturing process used for producing high-precision parts. Polyamide (PA), commonly known as Nylon, is widely used for its excellent strength, wear resistance, and versatility. Here's a step-by-step guide for PA (Polyamide, commonly known as Nylon) injection molding processing:"
+      background={background}
     >
       <FeatureCard
         props={[

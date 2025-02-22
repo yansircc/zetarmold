@@ -1,29 +1,25 @@
-import PageWrapper from '@/components/page-wrapper';
-import { basicInfo } from './data';
-import WhatItIs from './what-it-is';
-import Difference from './what-is-difference';
-import PACharacteristics from './pa-characteristics';
-import PAProperty from './pa-property';
-import CanBeMolded from './can-be-molded';
-import KeyConsiderations from './key-considerations';
-import DesignGuide from './design-guide';
-import StepGuide from './step-guide';
-import Advantages from './advantages';
-import Disadvantages from './disadvantages';
-
-export default function paInjectionMoldingGuide() {
+import { PageHeader } from './page-header';
+import { WhatIs } from './what-is';
+/* 
+import { WhatIs } from './what-is';
+import { DifferentTypes } from './different-types';
+import { PaCharacteristics } from './pa-characteristics';
+import { PaProperty } from './pa-property';
+import { CanBeMolded } from './can-be-molded';
+import { KeyConsiderations } from './key-considerations';
+import { DesignGuide } from './design-guide';
+import { StepGuide } from './step-guide';
+import { Advantages } from './advantages';
+import { Disadvantages } from './disadvantages';
+import { IssuesSolutions } from './issues-solutions';
+import { Applications } from './applications';
+import { Resources } from './resources';
+*/
+export default function PaInjectionMoldingGuide() {
   return (
-    <PageWrapper {...basicInfo}>
-      <WhatItIs />
-      <Difference />
-      <PACharacteristics />
-      <PAProperty />
-      <CanBeMolded />
-      <KeyConsiderations />
-      <DesignGuide />
-      <StepGuide />
-      <Advantages />
-      <Disadvantages />
-    </PageWrapper>
+    <main>
+      <PageHeader background="inverse" />
+      <WhatIs />
+    </main>
   );
 }

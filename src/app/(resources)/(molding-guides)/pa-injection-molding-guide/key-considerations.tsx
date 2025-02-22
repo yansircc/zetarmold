@@ -1,11 +1,18 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import FeatureList from '@/components/data-sections/feature-list';
 import { Wrench } from 'lucide-react';
-export default function KeyConsiderations() {
+import { type BackgroundVariant } from './types';
+interface KeyConsiderationsProps {
+  background?: BackgroundVariant;
+}
+export default function KeyConsiderations({
+  background = 'default',
+}: KeyConsiderationsProps) {
   return (
     <TextWrapper
       title="What are the key considerations fo PA Injection Molding?"
       description="Injection molding is a complex process that requires careful attention to various parameters to ensure high-quality production, especially when using materials like Polyamide (PA), commonly known as nylon. Here are the key considerations to keep in mind:"
+      background={background}
     >
       <FeatureList
         props={[

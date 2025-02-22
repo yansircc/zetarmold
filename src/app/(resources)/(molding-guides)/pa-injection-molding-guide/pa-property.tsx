@@ -1,11 +1,17 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import { DataTable } from '@/components/data-sections/data-table';
-
-export default function PAProperty() {
+import { type BackgroundVariant } from './types';
+interface PAPropertyProps {
+  background?: BackgroundVariant;
+}
+export default function PAProperty({
+  background = 'default',
+}: PAPropertyProps) {
   return (
     <TextWrapper
       title="PA Material Properties Comparison"
       description="Different types of PA materials have varying properties that make them suitable for specific applications. Here's a detailed comparison of their key properties:"
+      background={background}
     >
       <DataTable
         columns={[
