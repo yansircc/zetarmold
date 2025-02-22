@@ -8,14 +8,14 @@ import {
 } from '@/components/ui/table';
 import { type ReactNode } from 'react';
 
-interface Column<T> {
+export interface Column<T> {
   header: string;
   accessorKey: keyof T;
   className?: string;
   cell?: (value: T[keyof T]) => ReactNode;
 }
 
-interface DataTableProps<T> {
+export interface DataTableProps<T> {
   data: T[];
   columns: Column<T>[];
   className?: string;

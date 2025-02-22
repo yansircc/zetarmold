@@ -148,7 +148,8 @@
     --card-foreground: 240 10% 4%; /* #09090B */
     --popover: 0 0% 100%; /* #FFFFFF */
     --popover-foreground: 240 10% 4%; /* #09090B */
-    --primary: 240 10% 4%; /* #09090B */
+    --primary: 240 10% 4%; /*#09090B*/
+    /* --primary: 225 84% 49%; */
     --primary-foreground: 0 0% 100%; /* #FFFFFF */
     --secondary: 0 0% 96%; /* #F5F5F5 */
     --secondary-foreground: 0 0% 9%; /* #171717 */
