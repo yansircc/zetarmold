@@ -1,14 +1,19 @@
+import { WhatItIs } from './what-it-is';
+import { PageHeader } from './page-header';
+import { Benefits } from './benefits';
+import { Applications } from './applications';
+import { Limitations } from './limitations';
+import { Categories } from './categories';
+
 export default function OurHistory() {
   return (
-    <main className="container flex min-h-[calc(100vh-4rem)] items-center justify-center py-12">
-      <div className="mx-auto max-w-2xl space-y-6 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Low Volume Mold</h1>
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          ZetarMold was founded in 2020 by a team of experienced professionals
-          who are dedicated to providing the highest quality injection molding
-          services to their clients.
-        </p>
-      </div>
+    <main>
+      <PageHeader background="inverse" alignment="left" />
+      <WhatItIs />
+      <Benefits background="gray" />
+      <Applications />
+      <Limitations background="gray" />
+      <Categories />
     </main>
   );
 }

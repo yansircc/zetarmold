@@ -7,7 +7,7 @@ type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface PageHeaderProps {
   title: string;
-  description: string;
+  description?: string;
   href: string;
   linkText: string;
   headingLevel?: HeadingLevel;
@@ -34,7 +34,7 @@ export function PageHeader({
         'text-center': alignment === 'center',
       })}
     >
-      <div className={cn('mx-auto max-w-screen-lg', className)}>
+      <div className={cn('container', className)}>
         <div className={cn('lg:max-w-xl', alignment === 'center' && 'mx-auto')}>
           <Heading className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
             {title}

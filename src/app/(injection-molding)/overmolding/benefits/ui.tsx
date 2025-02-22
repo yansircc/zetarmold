@@ -3,11 +3,11 @@ import { FeatureList } from '@/components/data-sections/feature-list';
 import type { BackgroundVariant } from '../types';
 import { features, basicInfo } from './data';
 
-interface BenifitsProps {
+interface BenefitsProps {
   background?: BackgroundVariant;
 }
 
-export function Benifits({ background = 'default' }: BenifitsProps) {
+export function Benefits({ background = 'default' }: BenefitsProps) {
   return (
     <TextWrapper {...basicInfo} background={background}>
       <FeatureList features={features} />
