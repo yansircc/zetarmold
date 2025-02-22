@@ -1,20 +1,20 @@
 import { type BackgroundVariant, cn, getBackgroundStyles } from '@/lib/utils';
 
-interface FeatureProps {
+export type FeatureItem = {
   icon: React.ReactNode;
   title: string;
   description: string;
-}
+};
 
-interface FeatureListProps {
-  props: FeatureProps[];
+export interface FeatureListProps {
+  features: FeatureItem[];
   // Optional columns prop with default value of 2
   columns?: 1 | 2 | 3;
   background?: BackgroundVariant;
 }
 
-export default function FeatureList({
-  props,
+export function FeatureList({
+  features,
   columns = 2,
   background = 'default',
 }: FeatureListProps) {
@@ -27,7 +27,7 @@ export default function FeatureList({
 
   return (
     <div className={cn(`grid gap-6 ${gridColsClass}`)}>
-      {props.map(({ icon, title, description }) => (
+      {features.map(({ icon, title, description }) => (
         <div
           className={cn(
             'flex flex-col gap-3 rounded-lg border p-7',

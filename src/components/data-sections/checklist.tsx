@@ -1,11 +1,19 @@
 import { type BackgroundVariant, cn, getBackgroundStyles } from '@/lib/utils';
 
+export type Tip = {
+  id: string;
+  content: string;
+};
+
 interface ChecklistProps {
-  tips: { id: number; content: string }[];
+  tips: Tip[];
   background?: BackgroundVariant;
 }
 
-export function Checklist({ tips, background = 'default' }: ChecklistProps) {
+export default function Checklist({
+  tips,
+  background = 'default',
+}: ChecklistProps) {
   return (
     <div className="mx-auto max-w-3xl">
       <div

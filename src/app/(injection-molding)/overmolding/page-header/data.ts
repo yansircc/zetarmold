@@ -1,11 +1,6 @@
-interface BasicInfo {
-  title: string;
-  description: string;
-  href: string;
-  linkText: string;
-}
+import type { PageInfo } from '../types';
 
-export const basicInfo: BasicInfo = {
+export const pageInfo: PageInfo = {
   title: 'Overmolding & 2k Injection Molding',
   description:
     'Overmolding is a process that involves molding two or more materials together to create a single product.',

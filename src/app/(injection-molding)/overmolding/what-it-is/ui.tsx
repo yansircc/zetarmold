@@ -1,19 +1,13 @@
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
-import type { BackgroundVariant } from './types';
+import type { BackgroundVariant } from '../types';
+import { basicInfo } from './data';
 interface WhatItIsProps {
   background?: BackgroundVariant;
 }
 
-export default function WhatItIs({ background = 'default' }: WhatItIsProps) {
+export function WhatItIs({ background = 'default' }: WhatItIsProps) {
   return (
-    <TextWrapper
-      title="What is Overmolding?"
-      description="Overmolding is an injection molding process where you mold one
-      material over top of another material or substrate."
-      image="https://zetarmold.com/wp-content/uploads/2024/05/Overmolding1.jpg"
-      imagePosition="left"
-      background={background}
-    >
+    <TextWrapper {...basicInfo} background={background}>
       <p>
         The first material is usually made of a different material or has a
         different shape than the second material. Overmolding is used in many

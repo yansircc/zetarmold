@@ -1,7 +1,7 @@
 import { ImageWithDialog } from './image-with-dialog';
 import { cn, type BackgroundVariant, getBackgroundStyles } from '@/lib/utils';
 
-interface TextWrapperProps {
+export interface TextWrapperProps {
   title?: string;
   description?: string;
   image?: string;
