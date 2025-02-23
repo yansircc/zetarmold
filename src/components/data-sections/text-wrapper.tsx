@@ -1,3 +1,4 @@
+import AnimatedText from '../ui/split-text';
 import { ImageWithDialog } from './image-with-dialog';
 import { cn, type BackgroundVariant, getBackgroundStyles } from '@/lib/utils';
 
@@ -51,7 +52,11 @@ export function TextWrapper({
               titleAlign === 'right' && 'text-right',
             )}
           >
-            {title ? <h2 className="text-2xl md:text-4xl">{title}</h2> : null}
+            {title ? (
+              <h2 className="text-2xl md:text-4xl">
+                <AnimatedText text={title} />
+              </h2>
+            ) : null}
             {description ? (
               <p className="text-muted-foreground text-sm md:text-base">
                 {description}

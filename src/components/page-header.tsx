@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { cn, type BackgroundVariant, getBackgroundStyles } from '@/lib/utils';
 import { type ClassValue } from 'clsx';
+import AnimatedText from './ui/split-text';
+import { Button } from './ui/button';
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -37,7 +39,7 @@ export function PageHeader({
       <div className={cn('container', className)}>
         <div className={cn('lg:max-w-xl', alignment === 'center' && 'mx-auto')}>
           <Heading className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
-            {title}
+            <AnimatedText text={title} />
           </Heading>
           <p
             className={cn('mb-8 lg:text-lg', {
@@ -49,16 +51,19 @@ export function PageHeader({
           >
             {description}
           </p>
-          <Link
-            href={href}
-            className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
-            style={{
-              justifyContent: alignment === 'center' ? 'center' : 'flex-start',
-            }}
-          >
-            {linkText}
-            <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          <Button asChild variant="link">
+            <Link
+              href={href}
+              className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
+              style={{
+                justifyContent:
+                  alignment === 'center' ? 'center' : 'flex-start',
+              }}
+            >
+              {linkText}
+              <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
