@@ -9,7 +9,7 @@ interface WhatItIsProps {
 
 export function WhatItIs({ background = 'default' }: WhatItIsProps) {
   return (
-    <SectionWrapper {...BASIC_INFO} background={background} alignment="left">
+    <SectionWrapper {...BASIC_INFO} background={background}>
       <MediaBesideLayout image={BASIC_INFO.image} imagePosition="left">
         {CONTENT}
       </MediaBesideLayout>

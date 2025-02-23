@@ -9,11 +9,7 @@ interface WhyChooseUsProps {
 
 export function WhyChooseUs({ background = 'default' }: WhyChooseUsProps) {
   return (
-    <SectionWrapper
-      {...BASIC_INFO}
-      background={background}
-      className="max-w-screen-lg"
-    >
+    <SectionWrapper {...BASIC_INFO} background={background}>
       <MediaBesideLayout
         youtubeId={BASIC_INFO.youtubeId}
         imagePosition="left"

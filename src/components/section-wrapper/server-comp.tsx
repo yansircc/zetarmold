@@ -7,12 +7,13 @@ import {
 import type { ClassValue } from 'clsx';
 import { AnimatedHeaderContent } from './client-comp';
 import { Container } from '@/components/ui/container';
+import { type ReactNode } from 'react';
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface SectionWrapperProps {
-  title?: string;
-  description?: string;
+  title?: ReactNode;
+  description?: ReactNode;
   href?: string;
   linkText?: string;
   headingLevel?: HeadingLevel;
@@ -41,7 +42,7 @@ export function SectionWrapper({
     }),
   };
 
-  const titleId = title ? slugify(title) : undefined;
+  const titleId = typeof title === 'string' ? slugify(title) : undefined;
 
   return (
     <section

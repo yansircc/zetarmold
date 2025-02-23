@@ -7,65 +7,25 @@ import { Comparison } from './comparison';
 import { WhyChooseUs } from './why-us';
 import { TableOfContents } from '@/components/table-of-contents';
 import { DocsLayout } from '@/components/layouts/docs-layout';
+import { HowItWorks } from './how-it-works';
+import { MaterialConsider } from './material-consider';
+import { MoldMaking } from './mold-making';
+import { Challenges } from './challenges';
+import { Checklist } from './checklist';
+import { DecisionTree } from './decision-tree';
+import { RelatedTech } from './related-tech';
+import { PartnerWithUs } from './partner-with-us';
+import { RouteList } from './route-list';
 
 export default function PVCInjectionMolding() {
   return (
     <DocsLayout
       leftSidebar={
-        <div>
-          <h3 className="mb-4 text-sm font-semibold text-gray-900 dark:text-gray-100">
-            Categories
-          </h3>
-          <ul className="space-y-2.5">
-            <li>
-              <a
-                href="#what-it-is"
-                className="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
-              >
-                What It Is
-              </a>
-            </li>
-            <li>
-              <a
-                href="#applications"
-                className="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
-              >
-                Applications
-              </a>
-            </li>
-            <li>
-              <a
-                href="#where-its-used"
-                className="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
-              >
-                Where It&apos;s Used
-              </a>
-            </li>
-            <li>
-              <a
-                href="#benefits"
-                className="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
-              >
-                Benefits
-              </a>
-            </li>
-            <li>
-              <a
-                href="#comparison"
-                className="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
-              >
-                Comparison
-              </a>
-            </li>
-            <li>
-              <a
-                href="#why-choose-us"
-                className="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
-              >
-                Why Choose Us
-              </a>
-            </li>
-          </ul>
+        <div className="space-y-6">
+          <div>
+            <h3 className="mb-4 px-4 text-sm font-semibold">Services</h3>
+            <RouteList />
+          </div>
         </div>
       }
       rightSidebar={<TableOfContents />}
@@ -77,6 +37,14 @@ export default function PVCInjectionMolding() {
       <Benefits background="gray" />
       <Comparison />
       <WhyChooseUs background="gray" />
+      <HowItWorks />
+      <MoldMaking background="gray" />
+      <MaterialConsider />
+      <Challenges background="gray" />
+      <Checklist />
+      <DecisionTree background="gray" />
+      <RelatedTech />
+      <PartnerWithUs background="gray" />
     </DocsLayout>
   );
 }

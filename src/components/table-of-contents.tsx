@@ -21,11 +21,14 @@ export function TableOfContents({ className }: TableOfContentsProps) {
   useEffect(() => {
     // Extract all h2 elements from the page
     const elements = Array.from(document.querySelectorAll('h2'));
-    const headingElements = elements.map((element) => ({
-      id: element.id ?? '',
-      text: element.textContent ?? '',
-      level: 2,
-    }));
+    const headingElements = elements.map((element, index) => {
+      const id = element.id || `heading-${index}`;
+      return {
+        id,
+        text: element.textContent ?? '',
+        level: 2,
+      };
+    });
 
     setHeadings(headingElements);
 
@@ -43,8 +46,13 @@ export function TableOfContents({ className }: TableOfContentsProps) {
       },
     );
 
-    // Observe all section headings
-    elements.forEach((element) => observer.observe(element));
+    // Observe all section headings and set id if missing
+    elements.forEach((element, index) => {
+      if (!element.id) {
+        element.id = `heading-${index}`;
+      }
+      observer.observe(element);
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -72,14 +80,14 @@ export function TableOfContents({ className }: TableOfContentsProps) {
               className={cn(
                 'group flex w-full items-center gap-2 text-left',
                 'text-muted-foreground hover:text-foreground py-1 text-sm transition-colors',
-                activeId === heading.id && 'text-foreground font-medium',
+                activeId === heading.id && 'text-primary font-medium',
               )}
             >
               <div
                 className={cn(
                   'h-1 w-1 rounded-full transition-colors',
                   activeId === heading.id
-                    ? 'bg-foreground'
+                    ? 'bg-primary'
                     : 'bg-muted-foreground/40 group-hover:bg-muted-foreground',
                 )}
               />

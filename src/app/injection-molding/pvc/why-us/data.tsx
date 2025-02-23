@@ -2,7 +2,11 @@ import { Factory, ShieldCheck, Users } from 'lucide-react';
 import type { FeatureItem } from '@/components/sections/feature-list';
 
 export const BASIC_INFO = {
-  title: 'Why Choose ZetarMold?',
+  title: (
+    <>
+      Why Choose <span className="text-primary">ZetarMold</span>?
+    </>
+  ),
   description: 'With over 20 years of molding mastery, ZetarMold brings:',
   youtubeId: '6gAjMdkEd2s',
 };

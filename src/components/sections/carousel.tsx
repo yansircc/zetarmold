@@ -12,8 +12,8 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface CarouselLayoutProps<T> {
-  title?: string;
-  description?: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
   items: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
   headerClassName?: string;

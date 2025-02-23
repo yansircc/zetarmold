@@ -1,13 +1,17 @@
 import { Shield, FlaskConical, DollarSign, Repeat } from 'lucide-react';
 import type { FeatureItem } from '@/components/sections/feature-list';
 
-export const basicInfo = {
-  title: 'Why Choose PVC Injection Molding?',
+export const BASIC_INFO = {
+  title: (
+    <>
+      Why Choose <span className="text-primary">PVC</span> Injection Molding?
+    </>
+  ),
   description:
     'PVC is a versatile material that can be used in a wide range of applications. It is a popular choice for construction, automotive, and consumer goods.',
 };
 
-export const features: FeatureItem[] = [
+export const FEATURES: FeatureItem[] = [
   {
     icon: <Shield className="size-6" />,
     title: 'Durability',

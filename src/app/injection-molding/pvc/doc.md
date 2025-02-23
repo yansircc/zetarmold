@@ -149,7 +149,3 @@ Get your design PVC-ready with this handy list:
 
 **Ready to Mold Your Future?**  
 [Contact ZetarMold](#) for a free consultation or quote today.
-
----
-
-This guide is your one-stop shop for mastering PVC Injection Molding, spotlighting why **ZetarMold** is the partner you need. It’s packed with knowledge, a sprinkle of humor, and the tools to kickstart your next big project.

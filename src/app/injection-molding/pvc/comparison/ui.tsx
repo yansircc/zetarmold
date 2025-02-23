@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/section-wrapper';
 import { DataTable } from '@/components/data-sections/data-table';
 import type { BackgroundVariant } from '../types';
-import { basicInfo, columns, tableData } from './data';
+import { BASIC_INFO, columns, tableData } from './data';
 
 interface ComparisonProps {
   background?: BackgroundVariant;
@@ -9,11 +9,7 @@ interface ComparisonProps {
 
 export function Comparison({ background = 'default' }: ComparisonProps) {
   return (
-    <SectionWrapper
-      {...basicInfo}
-      background={background}
-      className="max-w-screen-lg"
-    >
+    <SectionWrapper {...BASIC_INFO} background={background}>
       <DataTable columns={columns} data={tableData} />
     </SectionWrapper>
   );

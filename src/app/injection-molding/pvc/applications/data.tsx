@@ -7,7 +7,11 @@ interface ApplicationItem {
 }
 
 export const SECTION_INFO = {
-  title: 'Standards and Classifications',
+  title: (
+    <>
+      Standards <span className="text-primary">&</span> Classifications
+    </>
+  ),
   description:
     "PVC injection molding doesn't come with a rulebook as strict as some other processes, but it's typically defined by its applications and material variations",
 };

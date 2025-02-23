@@ -18,7 +18,7 @@ export const videos: GalleryItem[] = [
       'This video shows the process of making a low pressure injection molding product.',
   },
   {
-    title: 'How SLA 3D Printing works？',
+    title: 'How SLA 3D Printing works?',
     youtubeId: 'DkLomBi08Ak',
     description:
       'This video shows the process of making a SLA 3D printing product.',

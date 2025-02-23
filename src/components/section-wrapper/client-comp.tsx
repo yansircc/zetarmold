@@ -4,11 +4,11 @@ import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useRef } from 'react';
+import { useRef, type ReactNode } from 'react';
 
 interface AnimatedHeaderContentProps {
-  title?: string;
-  description?: string;
+  title?: ReactNode;
+  description?: ReactNode;
   href?: string;
   linkText?: string;
   headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -76,12 +76,12 @@ export function AnimatedHeaderContent({
       )}
 
       {description && (
-        <motion.p
+        <motion.div
           variants={itemVariants}
           className={cn('mb-8 lg:text-lg', textColor?.description)}
         >
           {description}
-        </motion.p>
+        </motion.div>
       )}
 
       {href && linkText && (

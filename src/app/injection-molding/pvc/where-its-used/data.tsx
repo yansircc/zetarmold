@@ -1,7 +1,11 @@
 import type { GalleryItem } from '@/components/data-sections/gallery';
 
 export const BASIC_INFO = {
-  title: 'Applications and Benefits',
+  title: (
+    <>
+      Applications <span className="text-primary">&</span> Benefits
+    </>
+  ),
   description:
     'PVC is a versatile material that can be used in a wide range of applications. It is a popular choice for construction, automotive, and consumer goods.',
 };

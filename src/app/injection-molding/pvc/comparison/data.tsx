@@ -8,8 +8,12 @@ interface ComparisonData {
   complexity: string;
 }
 
-export const basicInfo = {
-  title: 'Injection Molding Method Comparison',
+export const BASIC_INFO = {
+  title: (
+    <>
+      Injection Molding Method <span className="text-primary">Comparison</span>
+    </>
+  ),
   description:
     'Compare different injection molding methods to find the best fit for your project. Consider factors like cost, speed, and material options.',
 };

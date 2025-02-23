@@ -11,7 +11,7 @@ export function Container({ children, className }: ContainerProps) {
   return (
     <div
       className={cn(
-        'mx-auto flex max-w-5xl flex-col gap-8 px-4 py-32',
+        'mx-auto flex max-w-5xl flex-col gap-8 px-4 py-16 md:py-24',
         className,
       )}
     >

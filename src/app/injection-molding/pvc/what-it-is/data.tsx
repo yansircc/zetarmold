@@ -2,7 +2,11 @@ import { type FeatureItem } from '@/components/sections/feature-list';
 import { FlaskConical, Tag, Thermometer } from 'lucide-react';
 
 export const BASIC_INFO = {
-  title: 'What is PVC Injection Molding?',
+  title: (
+    <>
+      What is <span className="text-primary">PVC</span> Injection Molding?
+    </>
+  ),
   image: 'https://shadcnblocks.com/images/block/placeholder-1.svg',
 };
 

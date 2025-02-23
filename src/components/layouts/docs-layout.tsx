@@ -72,7 +72,7 @@ export function DocsLayout({
         </Sheet>
 
         {/* Left Sidebar - Desktop */}
-        <aside className="bg-background/80 fixed inset-y-0 left-0 hidden w-64 border-r backdrop-blur-sm lg:block">
+        <aside className="bg-background/80 fixed inset-y-0 left-0 mt-20 hidden w-64 border-r backdrop-blur-sm lg:block">
           <div className="scrollbar-hide sticky top-0 h-screen overflow-y-auto p-4">
             {leftSidebar}
           </div>
@@ -84,7 +84,7 @@ export function DocsLayout({
         </main>
 
         {/* Right Sidebar - Desktop */}
-        <aside className="bg-background/80 fixed inset-y-0 right-0 hidden w-64 border-l backdrop-blur-sm xl:block">
+        <aside className="bg-background/80 fixed inset-y-0 right-0 mt-20 hidden w-64 border-l backdrop-blur-sm xl:block">
           <div className="scrollbar-hide sticky top-0 h-screen overflow-y-auto p-4">
             {rightSidebar}
           </div>
