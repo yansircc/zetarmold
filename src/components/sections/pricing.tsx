@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 import { Button } from '../ui/button';
 
 interface PricingPlan {

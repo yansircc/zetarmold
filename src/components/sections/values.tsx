@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Heart, UserCog, Lightbulb, Shield } from 'lucide-react';
 
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 
 const values = [
   {

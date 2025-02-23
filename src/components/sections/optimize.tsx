@@ -3,7 +3,7 @@ import React from 'react';
 import { Eye } from 'lucide-react';
 
 import OptimizeList from '../optimize-list';
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 
 const Optimize = () => {
   return (

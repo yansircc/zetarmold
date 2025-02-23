@@ -1,5 +1,3 @@
-import type { BasicInfo } from '../types';
-
 interface MoldData {
   moldType: string;
   moldMaterial: string;
@@ -7,7 +5,7 @@ interface MoldData {
   productMaterial: string;
 }
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Comparison of 4 Low Volume Injection Molds',
   description:
     "Here's an overview of the mold material,cycle life and product material of 3D printing molds, vacuum casting molds, reaction injection molds, and aluminum injection molds",

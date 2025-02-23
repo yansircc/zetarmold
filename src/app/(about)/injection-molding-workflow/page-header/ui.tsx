@@ -1,4 +1,4 @@
-import { PageHeader as PageHeaderComponent } from '@/components/page-header';
+import { SectionWrapper } from '@/components/section-wrapper';
 import { pageInfo } from './data';
 import { type BackgroundVariant } from '../types';
 
@@ -10,7 +10,7 @@ export function PageHeader({
   alignment?: 'center' | 'left';
 }) {
   return (
-    <PageHeaderComponent
+    <SectionWrapper
       {...pageInfo}
       background={background}
       alignment={alignment}

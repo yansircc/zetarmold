@@ -1,5 +1,3 @@
-import { type BasicInfo } from '../types';
-
 interface RelatedPost {
   id: string;
   title: string;
@@ -11,7 +9,7 @@ interface RelatedPost {
   image: string;
 }
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Related Posts',
   description:
     'Explore best practices about small batch mold steel solutions to optimize your manufacturing processes.',

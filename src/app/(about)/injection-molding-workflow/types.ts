@@ -1,3 +1,2 @@
 export type BackgroundVariant = 'default' | 'gray' | 'inverse' | 'accent';
-export type { TextWrapperProps as BasicInfo } from '@/components/data-sections/text-wrapper';
-export type { PageHeaderProps as PageInfo } from '@/components/page-header';
+export type { SectionWrapperProps as PageInfo } from '@/components/section-wrapper';

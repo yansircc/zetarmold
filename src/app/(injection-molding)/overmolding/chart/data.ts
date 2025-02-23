@@ -1,5 +1,3 @@
-import type { BasicInfo } from '../types';
-
 interface BondingData {
   overmoldingMaterial: string;
   ppT30s: string;
@@ -10,7 +8,7 @@ interface BondingData {
   paJ2700: string;
 }
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Overmolding Material Bonding Chart',
 };
 

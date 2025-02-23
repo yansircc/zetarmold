@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { Handshake } from 'lucide-react';
 
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 import { Card } from '../ui/card';
 
 const testimonials: TestimonialProps[] = [

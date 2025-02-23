@@ -1,0 +1,1 @@
+export { RelatedTech } from './ui';

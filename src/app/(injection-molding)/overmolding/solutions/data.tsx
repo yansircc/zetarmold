@@ -1,5 +1,4 @@
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
-import type { BasicInfo } from '../types';
 
 interface Solution {
   observation: string;
@@ -12,7 +11,7 @@ export interface CauseActionPair {
   action: string;
 }
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Overmolding Troubleshooting Guide',
   description:
     "The most common problems you'll run into with overmolding are: Adhesion problems, Incomplete filling of the substrate or overmolding, Flashing. Here's what you can do to fix these problems.",

@@ -1,5 +1,4 @@
 import type { TabItem } from '@/components/data-sections/tab-list';
-import type { BasicInfo } from '../types';
 import {
   Package,
   Microscope,
@@ -9,7 +8,7 @@ import {
   Truck,
 } from 'lucide-react';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Quality Inspection Process',
   description:
     'We will inspect the incoming materials to ensure they meet the required specifications. This includes checking dimensions, material properties, and visual inspection.',
