@@ -37,7 +37,7 @@ export function ImageWithDialog({
             src={imageUrl}
             alt="Media"
             fill
-            className="absolute top-0 left-0 h-full w-full rounded-xl border object-cover"
+            className="absolute top-0 left-0 h-full w-full rounded-xl object-cover"
           />
         </div>
         {youtubeId && (
