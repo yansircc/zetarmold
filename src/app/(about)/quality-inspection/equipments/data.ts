@@ -1,7 +1,6 @@
 import type { GalleryItem } from '@/components/data-sections/gallery';
-import type { BasicInfo } from '../types';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Quality Inspection Equipments',
   //   description:
   //     'We use a variety of quality inspection equipments to ensure the quality of our products.',

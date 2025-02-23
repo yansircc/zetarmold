@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 import DiagonalPattern from '../diagonal-pattern';
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 
 const TIMELINE_ITEMS = [
   {

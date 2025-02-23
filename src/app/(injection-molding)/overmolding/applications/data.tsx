@@ -1,8 +1,7 @@
 import { Wrench, HeartPulse, Car, Factory, ShoppingBag } from 'lucide-react';
-import type { FeatureItem } from '@/components/data-sections/feature-list';
-import type { BasicInfo } from '../types';
+import type { FeatureItem } from '@/components/sections/feature-list';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'What are the Applications of Overmolding?',
   description:
     'Overmolding is a versatile manufacturing process that can be used to create complex parts with unique properties and functionality, making it applicable to a wide range of industries.',

@@ -1,7 +1,6 @@
 import { type GalleryItem } from '@/components/data-sections/gallery';
-import { type BasicInfo } from '../types';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: '',
 };
 

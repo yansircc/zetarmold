@@ -1,7 +1,6 @@
 import type { TimelineItem } from '@/components/data-sections/timeline';
-import type { BasicInfo } from '../types';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: "Key Moments in Zetar's Growth",
   description:
     'Since 2005, we have evolved into a powerhouse in product design, mold making, manufacturing, assembly, and packaging through organic growth and strategic acquisitions. Discover highlights of our journey.',

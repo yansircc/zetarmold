@@ -1,4 +1,4 @@
-import { ImageWithDialog } from './image-with-dialog';
+import { ImageWithDialog } from '../sections/media-dialog';
 
 export interface GalleryItem {
   title: string;
@@ -17,12 +17,7 @@ const GalleryItemComponent = ({ item }: { item: GalleryItem }) => {
   return (
     <div className="border-border flex flex-col overflow-clip rounded-xl border">
       <div className="relative">
-        <ImageWithDialog
-          image={item.image}
-          title={item.title}
-          description={item.description}
-          youtubeId={item.youtubeId}
-        />
+        <ImageWithDialog image={item.image} youtubeId={item.youtubeId} />
       </div>
       <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
         <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">

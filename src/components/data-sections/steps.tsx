@@ -153,8 +153,6 @@ export function Steps({ steps }: { steps: Step[] }) {
           setDialogState({ isOpen: false, step: dialogState.step })
         }
         imageUrl={dialogState.step.image}
-        title={dialogState.step.title}
-        description={dialogState.step.description}
         videoId={dialogState.step.youtubeId}
       />
     </div>

@@ -1,5 +1,5 @@
 import { features, basicInfo } from './data';
-import { FeatureList } from '@/components/data-sections/feature-list';
+import { FeatureList } from '@/components/sections/feature-list';
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import type { BackgroundVariant } from '../types';
 

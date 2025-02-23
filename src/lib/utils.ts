@@ -5,13 +5,24 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export type BackgroundVariant = 'default' | 'gray' | 'inverse' | 'accent';
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
 
-export function getBackgroundStyles(variant: BackgroundVariant = 'default') {
-  return {
-    'bg-background text-foreground': variant === 'default',
-    'bg-muted-solid': variant === 'gray',
-    'bg-inverse': variant === 'inverse',
-    'bg-accent-solid': variant === 'accent',
-  };
+export type BackgroundVariant = 'default' | 'gray' | 'accent' | 'inverse';
+
+export function getBackgroundStyles(variant: BackgroundVariant): string {
+  switch (variant) {
+    case 'gray':
+      return 'bg-gray-50 dark:bg-gray-950';
+    case 'accent':
+      return 'bg-primary text-primary-foreground';
+    case 'inverse':
+      return 'bg-primary-foreground text-primary';
+    default:
+      return 'bg-background';
+  }
 }

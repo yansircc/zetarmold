@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ImageWithDialog } from './image-with-dialog';
+import { ImageWithDialog } from '../sections/media-dialog';
 
 export interface TimelineItem {
   image?: string;
@@ -33,8 +33,6 @@ const TimelineContent = ({ item }: { item: TimelineItem }) => {
       {item.image || item.youtubeId ? (
         <ImageWithDialog
           image={item.image}
-          title={item.title}
-          description={item.description}
           youtubeId={item.youtubeId}
           className="rounded-xl border"
         />
@@ -119,12 +117,7 @@ export function Timeline({
               </div>
             </div>
             {(item.image ?? item.youtubeId) && (
-              <ImageWithDialog
-                image={item.image}
-                title={item.title}
-                description={item.description}
-                youtubeId={item.youtubeId}
-              />
+              <ImageWithDialog image={item.image} youtubeId={item.youtubeId} />
             )}
           </div>
         ))}

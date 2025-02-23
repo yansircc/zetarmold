@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { Users, Twitter, Github } from 'lucide-react';
 
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 
 const teamMembers = [
   {

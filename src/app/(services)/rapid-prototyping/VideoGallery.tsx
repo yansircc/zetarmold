@@ -52,8 +52,6 @@ export function VideoGallery({ videos }: Props) {
           imageUrl={`https://img.youtube.com/vi/${getYouTubeVideoId(
             selectedVideo.youtubeUrl,
           )}/maxresdefault.jpg`}
-          title={selectedVideo.title}
-          description=""
           videoId={getYouTubeVideoId(selectedVideo.youtubeUrl)}
         />
       )}

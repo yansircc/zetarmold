@@ -1,5 +1,4 @@
 import { type Column } from '@/components/data-sections/data-table';
-import type { BasicInfo } from '../types';
 
 interface Equipment {
   no: number;
@@ -10,7 +9,7 @@ interface Equipment {
   usageArea: string;
 }
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: '',
 };
 

@@ -1,7 +1,6 @@
 import type { Faq } from '@/components/data-sections/faqs';
-import type { BasicInfo } from '../types';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'How Overmolding Works',
   description:
     "Overmolding is a tricky process that has a bunch of steps and needs you to plan and do it right. Here's a quick look at how overmolding works",

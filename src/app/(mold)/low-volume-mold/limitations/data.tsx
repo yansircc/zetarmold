@@ -1,8 +1,7 @@
 import { Factory, Settings, Flame, Ruler, Brush } from 'lucide-react';
-import type { FeatureItem } from '@/components/data-sections/feature-list';
-import type { BasicInfo } from '../types';
+import type { FeatureItem } from '@/components/sections/feature-list';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Limitations of Low Volume Injection Mold',
   description:
     ' there are times when it might not be the best choice. Here are some situations where Low Volume Injection Molding might not be the best option',
