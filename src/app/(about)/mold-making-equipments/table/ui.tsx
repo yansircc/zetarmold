@@ -1,4 +1,4 @@
-import { DataTable } from '@/components/data-sections/data-table';
+import { DataTable } from '@/components/sections/data-table';
 import { equipments, type Equipment, columns, basicInfo } from './data';
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import type { BackgroundVariant } from '../types';

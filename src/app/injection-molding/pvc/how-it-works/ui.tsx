@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/section-wrapper';
 import { BASIC_INFO, STEPS } from './data';
 import { type BackgroundVariant } from '../types';
-import { Steps } from '@/components/data-sections/steps';
+import { Steps } from '@/components/sections/steps';
 interface HowItWorksProps {
   background?: BackgroundVariant;
 }

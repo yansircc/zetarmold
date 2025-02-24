@@ -1,4 +1,4 @@
-import { type Column } from '@/components/data-sections/data-table';
+import { type Column } from '@/components/sections/data-table';
 
 interface Equipment {
   no: number;

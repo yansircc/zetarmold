@@ -1,4 +1,4 @@
-import type { Step } from '@/components/data-sections/steps';
+import type { Step } from '@/components/sections/steps';
 
 export const basicInfo = {
   title: '',
