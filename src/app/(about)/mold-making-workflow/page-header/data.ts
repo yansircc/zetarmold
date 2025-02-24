@@ -1,6 +1,4 @@
-import type { PageInfo } from '../types';
-
-export const pageInfo: PageInfo = {
+export const pageInfo = {
   title: 'Mold Design & Manufacturing Workflow',
   description:
     'Follow our systematic approach to mold design and manufacturing, ensuring quality and efficiency at every step.',
