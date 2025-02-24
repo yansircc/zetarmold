@@ -26,11 +26,14 @@ export function RouteList() {
 
   // Track which third-level section should be expanded with parent context
   const [expandedSection, setExpandedSection] = useState<string>(() => {
-    // Initialize with the section containing the current path
     let expanded = '';
     tmpRoutes.forEach((route) => {
       route.items?.forEach((item, itemIndex) => {
-        if (item.items?.some((subItem) => subItem.href === pathname)) {
+        if (
+          item.items?.some(
+            (subItem) => subItem.href && pathname.startsWith(subItem.href),
+          )
+        ) {
           expanded = `${route.title}-${itemIndex}`;
         }
       });
@@ -63,7 +66,7 @@ function findExpandedValues(
   items.forEach((route, index) => {
     const checkItems = (items: (typeof tmpRoutes)[0]['items']) => {
       items?.forEach((item) => {
-        if (item.href === currentPath) {
+        if (item.href && currentPath.startsWith(item.href)) {
           expandedValues.push(`item-${index}`);
         }
         if (item.items) {
@@ -158,7 +161,8 @@ function renderRouteItems(
                         className={cn(
                           'text-muted-foreground hover:text-foreground hover:bg-muted/50 text-sm',
                           'flex items-center gap-2 px-8 py-2 transition-all',
-                          currentPath === subItem.href &&
+                          subItem.href &&
+                            currentPath.startsWith(subItem.href) &&
                             'text-primary bg-muted/30 font-medium',
                         )}
                         initial="initial"
@@ -182,7 +186,8 @@ function renderRouteItems(
                 className={cn(
                   'text-muted-foreground hover:text-foreground hover:bg-muted/50 text-sm',
                   'flex items-center gap-2 px-8 py-2 transition-all',
-                  currentPath === item.href &&
+                  item.href &&
+                    currentPath.startsWith(item.href) &&
                     'text-primary bg-muted/30 font-medium',
                 )}
                 initial="initial"
