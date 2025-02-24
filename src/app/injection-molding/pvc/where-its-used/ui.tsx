@@ -10,7 +10,7 @@ interface WhereItsUsedProps {
 export function WhereItsUsed({ background = 'default' }: WhereItsUsedProps) {
   return (
     <SectionWrapper {...BASIC_INFO} background={background}>
-      <Gallery items={GALLERY_ITEMS} columns={2} />
+      <Gallery items={GALLERY_ITEMS} columns={3} />
     </SectionWrapper>
   );
 }

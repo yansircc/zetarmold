@@ -7,7 +7,8 @@ export const BASIC_INFO = {
       Why Choose <span className="text-primary">ZetarMold</span>?
     </>
   ),
-  description: 'With over 20 years of molding mastery, ZetarMold brings:',
+  linkText: 'Discover Zetar: 300+ Projects Delivered Annually',
+  href: '/contact',
   youtubeId: '6gAjMdkEd2s',
 };
 

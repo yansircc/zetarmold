@@ -15,6 +15,7 @@ export function PageHeader({
       background={background}
       alignment={alignment}
       headingLevel="h1"
+      showGridBackground={true}
     />
   );
 }

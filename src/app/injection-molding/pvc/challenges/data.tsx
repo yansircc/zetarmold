@@ -7,7 +7,8 @@ export const BASIC_INFO = {
       Challenges <span className="text-primary">&</span> Solutions
     </>
   ),
-  description: 'Learn about the challenges of PVC injection molding.',
+  linkText: 'Discover expert solutions with Zetar',
+  href: '/contact',
 };
 
 export const FEATURES: FeatureItem[] = [

@@ -16,6 +16,8 @@ export const BASIC_INFO = {
   ),
   description:
     'Compare different injection molding methods to find the best fit for your project. Consider factors like cost, speed, and material options.',
+  linkText: 'Overwhelmed by Data? Let Zetar Make the Decision',
+  href: '/contact',
 };
 
 export const columns = [

@@ -8,6 +8,8 @@ export const BASIC_INFO = {
   ),
   description:
     'PVC is a versatile material that can be used in a wide range of applications. It is a popular choice for construction, automotive, and consumer goods.',
+  linkText: 'See How Zetar Transforms PVC for Your Needs',
+  href: '/contact',
 };
 
 export const GALLERY_ITEMS: GalleryItem[] = [

@@ -1,4 +1,5 @@
 import { type BackgroundVariant, cn, getBackgroundStyles } from '@/lib/utils';
+import { DownloadButton } from './download-button';
 
 export type Tip = {
   content: string;
@@ -9,10 +10,7 @@ interface ChecklistProps {
   background?: BackgroundVariant;
 }
 
-export default function Checklist({
-  tips,
-  background = 'default',
-}: ChecklistProps) {
+export function Checklist({ tips, background = 'default' }: ChecklistProps) {
   return (
     <div className="mx-auto max-w-3xl">
       <div
@@ -34,6 +32,9 @@ export default function Checklist({
             </div>
           ))}
         </div>
+      </div>
+      <div className="mt-4 flex justify-end">
+        <DownloadButton tips={tips} />
       </div>
     </div>
   );

@@ -79,9 +79,7 @@ export function DocsLayout({
         </aside>
 
         {/* Main Content */}
-        <main className="min-w-0 flex-1 pb-16 lg:pl-64 xl:pr-64">
-          {children}
-        </main>
+        <main className="min-w-0 flex-1 lg:pl-64 xl:pr-64">{children}</main>
 
         {/* Right Sidebar - Desktop */}
         <aside className="bg-background/80 fixed inset-y-0 right-0 mt-20 hidden w-64 border-l backdrop-blur-sm xl:block">

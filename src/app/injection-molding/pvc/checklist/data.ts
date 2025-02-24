@@ -2,6 +2,8 @@ import type { Tip } from '@/components/sections/checklist';
 
 export const BASIC_INFO = {
   title: 'PVC Injection Molding Design Checklist',
+  linkText: 'Let Zetar Check Your Project in Detail',
+  href: '/contact',
 };
 
 export const CHECKLIST: Tip[] = [

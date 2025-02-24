@@ -1,6 +1,6 @@
 import { basicInfo, tips } from './data';
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
-import Checklist from '@/components/sections/checklist';
+import { Checklist } from '@/components/sections/checklist';
 import type { BackgroundVariant } from '../types';
 
 interface TipsProps {
