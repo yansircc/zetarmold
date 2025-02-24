@@ -5,7 +5,6 @@ import {
   PageHeader,
   WhatItIs,
   ApplicationsCarousel,
-  WhereItsUsed,
   Benefits,
   Comparison,
   WhyChooseUs,

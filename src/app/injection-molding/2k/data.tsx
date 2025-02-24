@@ -405,8 +405,8 @@ export const CHALLENGES = {
 export const CHALLENGES_MEDIA_BESIDE_LAYOUT = {
   description: (
     <p>
-      <b>ZetarMold's Edge</b>: Our engineers are material matchmakers, ensuring
-      your parts bond perfectly every time.
+      <b>ZetarMold&apos;s Edge</b>: Our engineers are material matchmakers,
+      ensuring your parts bond perfectly every time.
     </p>
   ),
   image: '/images/placeholder/1.svg',
