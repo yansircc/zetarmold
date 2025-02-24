@@ -1,4 +1,4 @@
-const Configuration = {
+module.exports = {
   /*
    * Resolve and load @commitlint/config-conventional from node_modules.
    * Referenced packages must be installed
@@ -44,7 +44,7 @@ const Configuration = {
    * To see full list, check https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/is-ignored/src/defaults.ts.
    * To disable those ignores and run rules always, set `defaultIgnores: false` as shown below.
    */
-  ignores: [(/** @type {string} */ commit) => commit === ''],
+  ignores: [(commit) => commit === ''],
   /*
    * Whether commitlint uses the default ignore rules, see the description above.
    */
@@ -52,7 +52,8 @@ const Configuration = {
   /*
    * Custom URL to show upon failure
    */
-  helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
+  helpUrl:
+    'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
   /*
    * Custom prompt configs
    */
@@ -64,6 +65,4 @@ const Configuration = {
       },
     },
   },
-}
-
-export default Configuration
+};

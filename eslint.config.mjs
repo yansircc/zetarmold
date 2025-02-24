@@ -1,17 +1,17 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { FlatCompat } from '@eslint/eslintrc'
-import typescriptPlugin from '@typescript-eslint/eslint-plugin'
-import typescriptParser from '@typescript-eslint/parser'
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc';
+import typescriptPlugin from '@typescript-eslint/eslint-plugin';
+import typescriptParser from '@typescript-eslint/parser';
 
 // 正确获取 __dirname
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: true,
-})
+});
 
 // 首先定义忽略配置
 const ignores = {
@@ -45,12 +45,12 @@ const ignores = {
     // Husky
     '.lintstagedrc.js',
   ],
-}
+};
 
 // 获取继承的配置
 const configs = compat.config({
   extends: ['next/core-web-vitals'],
-})
+});
 
 // TypeScript 配置
 const typescriptConfigs = compat.config({
@@ -62,7 +62,7 @@ const typescriptConfigs = compat.config({
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
-})
+});
 
 export default [
   // 忽略配置必须放在第一位
@@ -119,4 +119,4 @@ export default [
       ],
     },
   },
-]
+];
