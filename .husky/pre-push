@@ -1,0 +1,10 @@
+echo "🏗️ Running build check before push..."
+
+# Run build command
+if bun run build; then
+  echo "✅ Build successful - proceeding with push"
+  exit 0
+else
+  echo "❌ Build failed - push aborted"
+  exit 1
+fi
