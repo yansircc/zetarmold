@@ -3,21 +3,7 @@ import { DataTable, type Column } from '@/components/sections/data-table';
 import { type BackgroundVariant } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
-export interface ComparisonData {
-  method: string;
-  costPerPart?: string;
-  initialInvestment?: string;
-  speed?: string;
-  precision?: string;
-  materialOptions?: string;
-  heatResistance?: string;
-  complexity?: string;
-  maintenance?: string;
-  partQuality?: string;
-  materialWaste?: string;
-  cycleTime?: string;
-  initialCost?: string;
-}
+export type ComparisonData = Record<string, string>;
 
 interface ComparisonProps {
   // Main content
