@@ -12,8 +12,15 @@ export const SECTION_INFO = {
       Standards <span className="text-primary">&</span> Classifications
     </>
   ),
-  description:
-    "PVC injection molding doesn't come with a rulebook as strict as some other processes, but it's typically defined by its applications and material variations",
+  description: (
+    <>
+      <b>Fun Fact</b>: PVC was accidentally discovered _twice_—in 1838 and
+      1872—before someone finally said, “Hey, this could be useful!” in the
+      1920s. Talk about a plastic with persistence!
+    </>
+  ),
+  linkText: 'Let Zetar engineer your PVC project',
+  href: '/contact',
 };
 
 export const APPLICATIONS: ApplicationItem[] = [

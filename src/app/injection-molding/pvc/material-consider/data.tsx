@@ -6,7 +6,8 @@ export const BASIC_INFO = {
       Considerations
     </>
   ),
-  description: 'Explore the additives and challenges in PVC injection molding.',
+  linkText: 'Get expert material advice from Zetar',
+  href: '/contact',
 };
 
 export const GALLERY_ITEMS: GalleryItem[] = [

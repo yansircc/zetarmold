@@ -7,8 +7,8 @@ export const BASIC_INFO = {
       <span className="text-primary">Mold Design</span> for PVC Injection
     </>
   ),
-  description:
-    'Explore the intricacies of mold design for PVC injection molding.',
+  linkText: 'Sit Back and Let Zetar Design Your Mold',
+  href: '/contact',
 };
 
 export const FEATURES: FeatureItem[] = [

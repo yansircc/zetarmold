@@ -7,6 +7,8 @@ export const BASIC_INFO = {
       What is <span className="text-primary">PVC</span> Injection Molding?
     </>
   ),
+  linkText: 'Skip the Details, Let Zetar Handle Your PVC Project',
+  href: '/contact',
   image: 'https://shadcnblocks.com/images/block/placeholder-1.svg',
 };
 

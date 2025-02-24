@@ -2,8 +2,8 @@ import type { Step } from '@/components/sections/steps';
 
 export const BASIC_INFO = {
   title: 'Dive Deeper: How It Works',
-  description:
-    'Delivers precision parts with tight tolerances, perfect for complex designs.',
+  linkText: 'Let Zetar Patiently Explain the Principles',
+  href: '/contact',
 };
 
 export const STEPS: Step[] = [

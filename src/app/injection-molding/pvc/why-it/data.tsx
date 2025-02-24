@@ -7,8 +7,8 @@ export const BASIC_INFO = {
       Why Choose <span className="text-primary">PVC</span> Injection Molding?
     </>
   ),
-  description:
-    'PVC is a versatile material that can be used in a wide range of applications. It is a popular choice for construction, automotive, and consumer goods.',
+  linkText: 'Let Zetar Take Care of Your PVC Project',
+  href: '/contact',
 };
 
 export const FEATURES: FeatureItem[] = [

@@ -7,7 +7,7 @@ import { footerLinks } from '@/constants/footer-link';
 
 const Footer = () => {
   return (
-    <footer className="border-t">
+    <footer className="bg-background relative border-t">
       <div className="container flex justify-between gap-8 border-x py-4 max-md:flex-col lg:py-8">
         <div className="mb-8 flex-1">
           <Link href="/" className="flex items-center gap-1">

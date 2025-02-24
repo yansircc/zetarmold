@@ -1,6 +1,8 @@
 import { SectionWrapper } from '@/components/section-wrapper';
-import { BASIC_INFO } from './data';
+import { BASIC_INFO, RELATED_TECHS } from './data';
 import { type BackgroundVariant } from '../types';
+import { TextList } from '@/components/sections/text-list';
+import { MediaBesideLayout } from '@/components/sections/media-beside';
 
 interface RelatedTechProps {
   background?: BackgroundVariant;
@@ -9,11 +11,12 @@ interface RelatedTechProps {
 export function RelatedTech({ background = 'default' }: RelatedTechProps) {
   return (
     <SectionWrapper {...BASIC_INFO} background={background}>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="space-y-8">
-          <h3 className="text-2xl font-bold">Related Tech</h3>
-        </div>
-      </div>
+      <MediaBesideLayout
+        image="https://shadcnblocks.com/images/block/placeholder-1.svg"
+        imagePosition="right"
+      >
+        <TextList items={RELATED_TECHS} />
+      </MediaBesideLayout>
     </SectionWrapper>
   );
 }

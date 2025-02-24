@@ -88,7 +88,7 @@ export function AnimatedHeaderContent({
         <motion.div variants={itemVariants}>
           <Link
             href={href}
-            className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
+            className="group flex items-center text-base font-semibold"
             style={{
               justifyContent: alignment === 'center' ? 'center' : 'flex-start',
             }}

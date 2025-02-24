@@ -8,5 +8,5 @@ export const PAGE_HEADER_INFO = {
   description:
     'Discover the versatile world of PVC injection molding, from its applications to its benefits and manufacturing process.',
   href: '/contact',
-  linkText: 'Quick Quote',
+  linkText: 'Get a Quick Quote from Zetar',
 };

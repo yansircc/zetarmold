@@ -7,8 +7,9 @@ export const BASIC_INFO = {
       Why Partner with <span className="text-primary">ZetarMold</span>?
     </>
   ),
-  description: 'Learn about how to partner with us for PVC injection molding.',
   youtubeId: '6gAjMdkEd2s',
+  linkText: 'Partner with Zetar Today',
+  href: '/contact',
 };
 
 export const FEATURES: FeatureItem[] = [
