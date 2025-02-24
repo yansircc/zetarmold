@@ -5,12 +5,18 @@ import type { ReactNode } from 'react';
 
 export interface ComparisonData {
   method: string;
-  costPerPart: string;
-  initialInvestment: string;
-  speed: string;
-  precision: string;
-  materialOptions: string;
-  complexity: string;
+  costPerPart?: string;
+  initialInvestment?: string;
+  speed?: string;
+  precision?: string;
+  materialOptions?: string;
+  heatResistance?: string;
+  complexity?: string;
+  maintenance?: string;
+  partQuality?: string;
+  materialWaste?: string;
+  cycleTime?: string;
+  initialCost?: string;
 }
 
 interface ComparisonProps {
