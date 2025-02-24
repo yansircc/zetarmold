@@ -1,4 +1,4 @@
-import type { Step } from '@/components/data-sections/steps';
+import type { Step } from '@/components/sections/steps';
 
 export const BASIC_INFO = {
   title: 'Dive Deeper: How It Works',

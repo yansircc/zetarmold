@@ -1,4 +1,4 @@
-import { Steps } from '@/components/data-sections/steps';
+import { Steps } from '@/components/sections/steps';
 import { progress, basicInfo } from './data';
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
 import type { BackgroundVariant } from '@/lib/utils';

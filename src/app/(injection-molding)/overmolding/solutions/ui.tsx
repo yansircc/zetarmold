@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { TextWrapper } from '@/components/data-sections/text-wrapper';
-import { DataTable } from '@/components/data-sections/data-table';
+import { DataTable } from '@/components/sections/data-table';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
 import type { BackgroundVariant } from '../types';
 import { solutionsData, basicInfo, type CauseActionPair } from './data';

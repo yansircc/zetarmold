@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import * as LucideIcons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { ImageWithDialog } from '../sections/media-dialog';
+import { ImageWithDialog } from './media-dialog';
 
 export type Step = {
   title: string;
