@@ -1,21 +1,24 @@
-import { PageHeader } from './page-header';
-import { WhatItIs } from './what-it-is';
-import { ApplicationsCarousel } from './applications';
-import { WhereItsUsed } from './where-its-used';
-import { Benefits } from './why-it';
-import { Comparison } from './comparison';
-import { WhyChooseUs } from './why-us';
 import { TableOfContents } from '@/components/table-of-contents';
 import { DocsLayout } from '@/components/layouts/docs-layout';
-import { HowItWorks } from './how-it-works';
-import { MaterialConsider } from './material-consider';
-import { MoldMaking } from './mold-making';
-import { Challenges } from './challenges';
-import { Checklist } from './checklist';
-import { DecisionTree } from './decision-tree';
-import { RelatedTech } from './related-tech';
-import { PartnerWithUs } from './partner-with-us';
-import { RouteList } from './route-list';
+import * as data from './data';
+import {
+  PageHeader,
+  WhatItIs,
+  ApplicationsCarousel,
+  WhereItsUsed,
+  Benefits,
+  Comparison,
+  WhyChooseUs,
+  HowItWorks,
+  MaterialConsider,
+  MoldMaking,
+  Challenges,
+  Checklist,
+  DecisionTree,
+  RelatedTech,
+  PartnerWithUs,
+  RouteList,
+} from '@/components/sections/templates';
 
 export default function PVCInjectionMolding() {
   return (
@@ -30,21 +33,123 @@ export default function PVCInjectionMolding() {
       }
       rightSidebar={<TableOfContents />}
     >
-      <PageHeader alignment="left" background="gray" />
-      <WhatItIs />
-      <ApplicationsCarousel background="gray" />
-      <WhereItsUsed />
-      <Benefits background="gray" />
-      <Comparison />
-      <WhyChooseUs background="gray" />
-      <HowItWorks />
-      <MoldMaking background="gray" />
-      <MaterialConsider />
-      <Challenges background="gray" />
-      <Checklist />
-      <DecisionTree background="gray" />
-      <RelatedTech />
-      <PartnerWithUs background="gray" />
+      <PageHeader
+        title={data.PAGE_HEADER_INFO.title}
+        description={data.PAGE_HEADER_INFO.description}
+        action={data.PAGE_HEADER_INFO.action}
+        alignment="left"
+        headingLevel="h1"
+        showGridBackground={true}
+        background="gray"
+      />
+      <WhatItIs
+        title={data.WHAT_IT_IS.title}
+        action={data.WHAT_IT_IS.action}
+        image={data.WHAT_IT_IS.image}
+        imagePosition="left"
+        content={data.WHAT_IT_IS_CONTENT}
+        features={data.WHAT_IT_IS_FEATURES}
+        featureColumns={2}
+        alignment="left"
+        showGridBackground={false}
+        className="mb-12"
+      />
+      <ApplicationsCarousel
+        title={data.APPLICATIONS_INFO.title}
+        description={data.APPLICATIONS_INFO.description}
+        action={data.APPLICATIONS_INFO.action}
+        items={data.APPLICATIONS}
+        alignment="left"
+        showProgress={true}
+        showControls={true}
+        background="gray"
+      />
+      <WhereItsUsed
+        title={data.WHERE_ITS_USED.title}
+        description={data.WHERE_ITS_USED.description}
+        action={data.WHERE_ITS_USED.action}
+        items={data.WHERE_ITS_USED_GALLERY}
+        galleryColumns={3}
+      />
+      <Benefits
+        title={data.BENEFITS.title}
+        action={data.BENEFITS.action}
+        features={data.BENEFITS_FEATURES}
+        background="gray"
+      />
+      <Comparison
+        title={data.COMPARISON.title}
+        description={data.COMPARISON.description}
+        action={data.COMPARISON.action}
+        data={data.COMPARISON_DATA}
+        columns={data.COMPARISON_COLUMNS}
+      />
+      <WhyChooseUs
+        title={data.WHY_CHOOSE_US.title}
+        action={data.WHY_CHOOSE_US.action}
+        youtubeId={data.WHY_CHOOSE_US.youtubeId}
+        features={data.WHY_CHOOSE_US_FEATURES}
+        featureColumns={1}
+        imagePosition="left"
+        isImageSticky={true}
+        background="gray"
+      />
+      <HowItWorks
+        title={data.HOW_IT_WORKS.title}
+        action={data.HOW_IT_WORKS.action}
+        steps={data.HOW_IT_WORKS_STEPS}
+      />
+      <MoldMaking
+        title={data.MOLD_MAKING.title}
+        action={data.MOLD_MAKING.action}
+        features={data.MOLD_MAKING_FEATURES}
+        background="gray"
+      />
+      <MaterialConsider
+        title={data.MATERIAL_CONSIDER.title}
+        action={data.MATERIAL_CONSIDER.action}
+        items={data.MATERIAL_CONSIDER_GALLERY}
+      />
+      <Challenges
+        title={data.CHALLENGES.title}
+        action={data.CHALLENGES.action}
+        image={data.CHALLENGES_MEDIA_BESIDE_LAYOUT.image}
+        features={data.CHALLENGES_FEATURES}
+        featureColumns={1}
+        imagePosition="left"
+        isImageSticky={true}
+        background="gray"
+      />
+      <Checklist
+        title={data.CHECKLIST.title}
+        action={data.CHECKLIST.action}
+        tips={data.CHECKLIST_ITEMS}
+        alignment="center"
+      />
+      <DecisionTree
+        title={data.DECISION_TREE.title}
+        action={data.DECISION_TREE.action}
+        steps={data.DECISION_TREE_STEPS}
+        alignment="center"
+        background="gray"
+      />
+      <RelatedTech
+        title={data.RELATED_TECH.title}
+        action={data.RELATED_TECH.action}
+        items={data.RELATED_TECH_ITEMS}
+        image={data.RELATED_TECH_MEDIA_BESIDE_LAYOUT.image}
+        imagePosition="right"
+      />
+      <PartnerWithUs
+        title={data.PARTNER_WITH_US.title}
+        action={data.PARTNER_WITH_US.action}
+        youtubeId={data.PARTNER_WITH_US.youtubeId}
+        features={data.PARTNER_WITH_US_FEATURES}
+        featureColumns={1}
+        imagePosition="left"
+        isImageSticky={true}
+        background="gray"
+      />
     </DocsLayout>
   );
 }

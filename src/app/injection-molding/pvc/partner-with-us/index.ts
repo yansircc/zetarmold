@@ -1,1 +1,0 @@
-export { PartnerWithUs } from './ui';

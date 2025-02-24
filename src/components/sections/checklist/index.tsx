@@ -5,7 +5,7 @@ export type Tip = {
   content: string;
 };
 
-interface ChecklistProps {
+export interface ChecklistProps {
   tips: Tip[];
   background?: BackgroundVariant;
 }

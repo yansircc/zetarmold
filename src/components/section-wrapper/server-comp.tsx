@@ -15,8 +15,10 @@ type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export interface SectionWrapperProps {
   title?: ReactNode;
   description?: ReactNode;
-  href?: string;
-  linkText?: string;
+  action?: {
+    text: string;
+    href: string;
+  };
   headingLevel?: HeadingLevel;
   className?: ClassValue;
   background?: BackgroundVariant;
@@ -28,8 +30,7 @@ export interface SectionWrapperProps {
 export function SectionWrapper({
   title,
   description,
-  href,
-  linkText,
+  action,
   headingLevel = 'h2',
   className,
   background = 'default',
@@ -71,8 +72,7 @@ export function SectionWrapper({
         <AnimatedHeaderContent
           title={title}
           description={description}
-          href={href}
-          linkText={linkText}
+          action={action}
           headingLevel={headingLevel}
           alignment={alignment}
           textColor={textColor}

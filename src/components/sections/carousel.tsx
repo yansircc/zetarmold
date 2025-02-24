@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 
-interface ApplicationItem {
+export interface CarouselItem {
   taxonomy: string;
   title: string;
   description: string;
@@ -21,8 +21,8 @@ interface ApplicationItem {
   hoverImage: string;
 }
 
-interface CarouselLayoutProps {
-  items: ApplicationItem[];
+export interface CarouselLayoutProps {
+  items: CarouselItem[];
   showProgress?: boolean;
   showControls?: boolean;
   carouselClassName?: string;

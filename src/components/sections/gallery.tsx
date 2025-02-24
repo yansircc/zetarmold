@@ -7,7 +7,7 @@ export interface GalleryItem {
   youtubeId?: string;
 }
 
-interface GalleryProps {
+export interface GalleryProps {
   items: GalleryItem[];
   variant?: 'default' | 'grid' | 'masonry' | 'image-top';
   columns?: 1 | 2 | 3 | 4 | 5;

@@ -1,1 +1,0 @@
-export { ApplicationsCarousel } from './ui';
