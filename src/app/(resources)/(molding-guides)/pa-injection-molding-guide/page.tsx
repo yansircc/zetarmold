@@ -1,5 +1,5 @@
-import { PageHeader } from './page-header';
-import { WhatIs } from './what-is';
+// import { PageHeader } from './page-header';
+// import { WhatIs } from './what-is';
 /* 
 import { WhatIs } from './what-is';
 import { DifferentTypes } from './different-types';
