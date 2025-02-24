@@ -1,4 +1,8 @@
 @import 'tailwindcss';
+/*
+  ---break---
+*/
+@custom-variant dark (&:is(.dark *));
 
 @plugin 'tailwindcss-animate';
 @plugin '@tailwindcss/typography';
@@ -47,6 +51,7 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
   --animate-marquee: marquee 25s linear infinite;
+  --animate-shine: shine 3s ease-out infinite;
 
   @keyframes accordion-down {
     from {
@@ -70,6 +75,17 @@
     }
     100% {
       transform: translateX(-100%);
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 200% 0;
+    }
+    25% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: -200% 0;
     }
   }
 }
@@ -148,12 +164,13 @@
     --card-foreground: 240 10% 4%; /* #09090B */
     --popover: 0 0% 100%; /* #FFFFFF */
     --popover-foreground: 240 10% 4%; /* #09090B */
-    --primary: 240 10% 4%; /*#09090B*/
-    /* --primary: 225 84% 49%; */
+    /* --primary: 240 10% 4%; #09090B*/
+    --primary: 225 84% 49%;
     --primary-foreground: 0 0% 100%; /* #FFFFFF */
     --secondary: 0 0% 96%; /* #F5F5F5 */
     --secondary-foreground: 0 0% 9%; /* #171717 */
-    --muted: 0 0% 96%; /* #F5F5F5 */
+    /* --muted: 0 0% 96%; #F5F5F5 */
+    --muted: 214 97% 97%;
     --muted-foreground: 0 0% 49%; /* #7D7D7D */
     --accent: 0 0% 96%; /* #F5F5F5 */
     --accent-foreground: 0 0% 9%; /* #171717 */
@@ -212,4 +229,17 @@ html,
 body {
   scroll-behavior: smooth;
   position: relative;
+}
+
+/*
+  ---break---
+*/
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

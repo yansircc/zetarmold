@@ -1,4 +1,4 @@
-import { ImageWithDialog } from './image-with-dialog';
+import { ImageWithDialog } from '../sections/media-dialog';
 import { cn, type BackgroundVariant, getBackgroundStyles } from '@/lib/utils';
 
 export interface TextWrapperProps {
@@ -79,12 +79,7 @@ export function TextWrapper({
                     'md:sticky md:top-20 md:h-fit',
                 )}
               >
-                <ImageWithDialog
-                  image={image}
-                  title={title ?? ''}
-                  description={description ?? ''}
-                  youtubeId={youtubeId}
-                />
+                <ImageWithDialog image={image} youtubeId={youtubeId} />
               </div>
               <div className="w-full flex-1 space-y-6">{children}</div>
             </div>

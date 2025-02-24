@@ -10,10 +10,9 @@ import {
   Cable,
   Palette,
 } from 'lucide-react';
-import type { FeatureItem } from '@/components/data-sections/feature-list';
-import type { BasicInfo } from '../types';
+import type { FeatureItem } from '@/components/sections/feature-list';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'What are the Benefits of Overmolding?',
 };
 

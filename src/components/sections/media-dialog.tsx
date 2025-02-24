@@ -9,16 +9,12 @@ import { getVideoCoverById } from '@/app/utils/getVideoCoverById';
 
 interface ImageWithDialogProps {
   image?: string;
-  title: string;
-  description: string;
   youtubeId?: string;
   className?: string;
 }
 
 export function ImageWithDialog({
   image,
-  title,
-  description,
   youtubeId,
   className,
 }: ImageWithDialogProps) {
@@ -39,9 +35,9 @@ export function ImageWithDialog({
         <div className="relative h-0 w-full pb-[56.25%]">
           <Image
             src={imageUrl}
-            alt={title}
+            alt="Media"
             fill
-            className="absolute top-0 left-0 h-full w-full rounded-xl border object-cover"
+            className="absolute top-0 left-0 h-full w-full rounded-xl object-cover"
           />
         </div>
         {youtubeId && (
@@ -57,8 +53,6 @@ export function ImageWithDialog({
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         imageUrl={imageUrl}
-        title={title}
-        description={description}
         videoId={youtubeId}
       />
     </>

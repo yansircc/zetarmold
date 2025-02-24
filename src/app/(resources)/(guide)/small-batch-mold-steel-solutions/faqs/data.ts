@@ -1,12 +1,10 @@
-import type { BasicInfo } from '../types';
-
 interface FaqItem {
   id: string;
   question: string;
   answer: string;
 }
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'Frequently Asked Questions',
   description:
     'Discover perfect small batch mold steel solutions with Zetar Mold. Enhance precision and flexibility for superior manufacturing results.',

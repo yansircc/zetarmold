@@ -3,7 +3,7 @@ import React from 'react';
 import { PocketKnife } from 'lucide-react';
 
 import FeaturesList from '../features-list';
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 
 const Features = () => {
   return (

@@ -1,4 +1,4 @@
-import { PageHeader as PageHeaderComponent } from '@/components/page-header';
+import { SectionWrapper } from '@/components/section-wrapper';
 import { pageInfo } from './data';
 import { type BackgroundVariant } from '../types';
 
@@ -7,5 +7,5 @@ export function PageHeader({
 }: {
   background?: BackgroundVariant;
 }) {
-  return <PageHeaderComponent {...pageInfo} background={background} />;
+  return <SectionWrapper {...pageInfo} background={background} />;
 }

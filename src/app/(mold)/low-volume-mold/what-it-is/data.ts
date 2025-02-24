@@ -1,5 +1,3 @@
-import type { BasicInfo } from '../types';
-
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: 'What is Low Volume Injection Mold?',
 };

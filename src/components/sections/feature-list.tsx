@@ -36,7 +36,7 @@ export function FeatureList({
           key={title}
         >
           <div className="flex flex-col items-center gap-2.5 lg:flex-row">
-            <span className="bg-muted flex size-12 items-center justify-center rounded-md">
+            <span className="bg-muted text-primary flex size-12 items-center justify-center rounded-md">
               {icon}
             </span>
             <h3 className="text-lg font-medium">{title}</h3>

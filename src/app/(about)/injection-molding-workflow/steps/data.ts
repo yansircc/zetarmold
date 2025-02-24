@@ -1,7 +1,6 @@
 import type { TimelineItem } from '@/components/data-sections/timeline';
-import type { BasicInfo } from '../types';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: '',
 };
 

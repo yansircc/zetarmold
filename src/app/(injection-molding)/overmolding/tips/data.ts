@@ -1,7 +1,6 @@
-import type { Tip } from '@/components/data-sections/checklist';
-import type { BasicInfo } from '../types';
+import type { Tip } from '@/components/sections/checklist';
 
-export const basicInfo: BasicInfo = {
+export const basicInfo = {
   title: '10 Tips For Overmolding Design',
 };
 

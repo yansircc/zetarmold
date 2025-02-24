@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MessageCircleQuestion } from 'lucide-react';
 
-import SectionHeader from '../section-header';
+import SectionHeader from '../section-wrapper-tmp';
 
 import {
   Accordion,

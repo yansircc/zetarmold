@@ -1,5 +1,5 @@
 import { PageHeader } from './page-header';
-import { EquipmentTable } from './table/ui';
+import { EquipmentTable } from './table';
 
 export default function OurHistory() {
   return (

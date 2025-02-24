@@ -1,27 +1,28 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Play } from 'lucide-react';
-import { SimpleDialog } from '../simple-dialog';
 import * as LucideIcons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { ImageWithDialog } from '../sections/media-dialog';
 
-export interface Step {
+export type Step = {
   title: string;
   icon: keyof typeof LucideIcons;
   description: string;
-  image: string;
-  youtubeId?: string;
-}
+} & (
+  | {
+      image: string;
+      youtubeId?: undefined;
+    }
+  | {
+      image?: string;
+      youtubeId: string;
+    }
+);
 
 export function Steps({ steps }: { steps: Step[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [dialogState, setDialogState] = useState({
-    isOpen: false,
-    step: steps[0],
-  });
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const getIcon = (iconName: keyof typeof LucideIcons): LucideIcon => {
@@ -71,25 +72,13 @@ export function Steps({ steps }: { steps: Step[] }) {
               }}
               className="flex flex-col gap-4 md:h-[50vh]"
             >
-              <button
-                onClick={() => setDialogState({ isOpen: true, step })}
-                className="bg-muted group relative block rounded-2xl border p-4 md:hidden"
-              >
-                <Image
-                  src={step.image}
-                  alt={step.title}
-                  className="h-full max-h-full w-full max-w-full rounded-2xl object-cover"
-                  width={500}
-                  height={500}
+              <div className="md:hidden">
+                <ImageWithDialog
+                  image={step.image}
+                  youtubeId={step.youtubeId}
+                  className="bg-muted overflow-hidden rounded-2xl border"
                 />
-                {step.youtubeId && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex size-16 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-transform group-hover:scale-110">
-                      <Play className="size-8" />
-                    </div>
-                  </div>
-                )}
-              </button>
+              </div>
 
               <div className="flex items-center gap-3">
                 <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-lg">
@@ -100,9 +89,9 @@ export function Steps({ steps }: { steps: Step[] }) {
                 </span>
               </div>
 
-              <h2 className="text-2xl font-semibold md:text-4xl">
+              <h3 className="text-2xl font-semibold md:text-4xl">
                 {step.title}
-              </h2>
+              </h3>
               <p className="text-muted-foreground text-base leading-relaxed">
                 {step.description}
               </p>
@@ -111,52 +100,22 @@ export function Steps({ steps }: { steps: Step[] }) {
         })}
       </div>
       <div className="sticky top-56 right-0 hidden h-fit w-full items-center justify-center md:flex">
-        <Image
-          src={steps[steps.length - 1].image}
-          alt={steps[steps.length - 1].title}
-          className="invisible h-full max-h-[550px] w-full max-w-full object-cover"
-          width={500}
-          height={500}
-        />
-
-        {steps.map((step, index) => (
-          <button
-            key={index}
-            onClick={() => setDialogState({ isOpen: true, step })}
-            className={cn(
-              'bg-muted group absolute inset-0 flex h-full items-center justify-center rounded-2xl border p-4 transition-all duration-300',
-              index === activeIndex
-                ? 'scale-100 opacity-100'
-                : 'scale-95 opacity-0',
-            )}
-          >
-            <Image
-              src={step.image}
-              alt={step.title}
-              className="h-full max-h-full w-full max-w-full rounded-2xl border object-cover"
-              width={500}
-              height={500}
+        <div className="relative h-0 w-full pb-[56.25%]">
+          {steps.map((step, index) => (
+            <ImageWithDialog
+              key={index}
+              image={step.image}
+              youtubeId={step.youtubeId}
+              className={cn(
+                'bg-muted absolute inset-0 overflow-hidden rounded-2xl border transition-all duration-300',
+                index === activeIndex
+                  ? 'pointer-events-auto scale-100 opacity-100'
+                  : 'pointer-events-none scale-95 opacity-0',
+              )}
             />
-            {step.youtubeId && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex size-16 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-transform group-hover:scale-110">
-                  <Play className="size-8" />
-                </div>
-              </div>
-            )}
-          </button>
-        ))}
+          ))}
+        </div>
       </div>
-      <SimpleDialog
-        isOpen={dialogState.isOpen}
-        onClose={() =>
-          setDialogState({ isOpen: false, step: dialogState.step })
-        }
-        imageUrl={dialogState.step.image}
-        title={dialogState.step.title}
-        description={dialogState.step.description}
-        videoId={dialogState.step.youtubeId}
-      />
     </div>
   );
 }
