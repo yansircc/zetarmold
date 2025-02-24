@@ -1,0 +1,1 @@
+export { PaProperty } from './ui';

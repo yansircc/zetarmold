@@ -42,7 +42,12 @@ export function FeatureList({
             <h3 className="text-lg font-medium">{title}</h3>
           </div>
           <p className="text-muted-foreground text-center text-sm md:text-base lg:text-left">
-            {description}
+            {description.split('\n').map((line, i) => (
+              <>
+                {line}
+                {i < description.split('\n').length - 1 && <br />}
+              </>
+            ))}
           </p>
         </div>
       ))}
