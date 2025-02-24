@@ -1,1 +1,0 @@
-export { WhatItIs } from './ui';

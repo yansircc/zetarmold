@@ -9,8 +9,10 @@ import { useRef, type ReactNode } from 'react';
 interface AnimatedHeaderContentProps {
   title?: ReactNode;
   description?: ReactNode;
-  href?: string;
-  linkText?: string;
+  action?: {
+    text: string;
+    href: string;
+  };
   headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   alignment?: 'left' | 'center';
   textColor?: {
@@ -22,8 +24,7 @@ interface AnimatedHeaderContentProps {
 export function AnimatedHeaderContent({
   title,
   description,
-  href,
-  linkText,
+  action,
   headingLevel: Heading,
   alignment = 'left',
   textColor,
@@ -52,7 +53,7 @@ export function AnimatedHeaderContent({
     },
   };
 
-  if (!title && !description && !href) {
+  if (!title && !description && !action) {
     return null;
   }
 
@@ -84,16 +85,16 @@ export function AnimatedHeaderContent({
         </motion.div>
       )}
 
-      {href && linkText && (
+      {action && (
         <motion.div variants={itemVariants}>
           <Link
-            href={href}
+            href={action.href}
             className="group flex items-center text-base font-semibold"
             style={{
               justifyContent: alignment === 'center' ? 'center' : 'flex-start',
             }}
           >
-            {linkText}
+            {action.text}
             <motion.span
               whileHover={{ x: 4 }}
               className="ml-2 flex items-center"

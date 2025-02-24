@@ -1,1 +1,0 @@
-export { MaterialConsider } from './ui';

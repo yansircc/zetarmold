@@ -1,7 +1,7 @@
 import { ImageWithDialog } from './media-dialog';
 import { cn, type BackgroundVariant } from '@/lib/utils';
 
-interface MediaBesideLayoutProps {
+export interface MediaBesideLayoutProps {
   image?: string;
   imagePosition?: 'left' | 'right';
   children: React.ReactNode;
