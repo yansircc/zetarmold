@@ -8,7 +8,6 @@ export const PAGE_HEADER = {
     text: 'Contact Us',
     href: '/contact',
   },
-  headingLevel: 'h1',
 };
 
 export const EXPERTS_LAYOUT = {

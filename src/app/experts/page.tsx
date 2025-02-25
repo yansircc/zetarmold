@@ -11,6 +11,7 @@ export default function Experts() {
         title={PAGE_HEADER.title}
         description={PAGE_HEADER.description}
         action={PAGE_HEADER.action}
+        headingLevel="h1"
         background="gray"
       />
 
