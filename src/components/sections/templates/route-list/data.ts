@@ -8,8 +8,9 @@ export const tmpRoutes: RouteItem[] = [
   {
     title: 'Small Batch Solutions',
     items: [
-      { title: 'Small Batch Mold Development', href: '/small-batch' },
-      { title: 'Small Batch Production Service', href: '/small-batch' },
+      { title: '3D Printing Mold', href: '/small-batch/3d-printing-mold' },
+      { title: 'Aluminum Mold', href: '/small-batch/aluminum-mold' },
+      { title: 'RIM (Rubber Injection Molding)', href: '/small-batch/rim' },
     ],
   },
   {
@@ -70,15 +71,15 @@ export const tmpRoutes: RouteItem[] = [
     items: [
       {
         title: 'Liquid Silicone Injection',
-        href: '/silicone-molding/liquid-injection',
+        href: '/silicone-rubber-molding/liquid-injection',
       },
       {
         title: 'Silicone Compression Molding',
-        href: '/silicone-molding/compression',
+        href: '/silicone-rubber-molding/compression',
       },
       {
         title: 'Silicone Extrusion Molding',
-        href: '/silicone-molding/extrusion',
+        href: '/silicone-rubber-molding/extrusion',
       },
     ],
   },
