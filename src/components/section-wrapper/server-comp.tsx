@@ -6,7 +6,6 @@ import {
 } from '@/lib/utils';
 import type { ClassValue } from 'clsx';
 import { AnimatedHeaderContent } from './client-comp';
-import { Container } from '@/components/ui/container';
 import { type ReactNode } from 'react';
 import Image from 'next/image';
 
@@ -68,7 +67,12 @@ export function SectionWrapper({
           </div>
         </div>
       )}
-      <Container className={cn('relative z-10', className)}>
+      <div
+        className={cn(
+          'relative z-10 container mx-auto flex flex-col gap-12 px-4 py-16 md:py-24',
+          className,
+        )}
+      >
         <AnimatedHeaderContent
           title={title}
           description={description}
@@ -79,7 +83,7 @@ export function SectionWrapper({
           titleId={titleId}
         />
         {children}
-      </Container>
+      </div>
     </section>
   );
 }

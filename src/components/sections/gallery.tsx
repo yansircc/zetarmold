@@ -5,17 +5,27 @@ export interface GalleryItem {
   description: string;
   image?: string;
   youtubeId?: string;
+  background?: 'gray' | 'white';
 }
 
 export interface GalleryProps {
   items: GalleryItem[];
   variant?: 'default' | 'grid' | 'masonry' | 'image-top';
   columns?: 1 | 2 | 3 | 4 | 5;
+  background?: 'gray' | 'white';
 }
 
-const GalleryItemComponent = ({ item }: { item: GalleryItem }) => {
+const GalleryItemComponent = ({
+  item,
+  background,
+}: {
+  item: GalleryItem;
+  background: 'gray' | 'white';
+}) => {
   return (
-    <div className="border-border flex flex-col overflow-clip rounded-xl border">
+    <div
+      className={`border-border flex flex-col overflow-clip rounded-xl border ${background === 'gray' ? 'bg-gray-100' : 'bg-white'}`}
+    >
       <div className="relative">
         <ImageWithDialog image={item.image} youtubeId={item.youtubeId} />
       </div>
@@ -29,7 +39,11 @@ const GalleryItemComponent = ({ item }: { item: GalleryItem }) => {
   );
 };
 
-const GalleryImageTop = ({ items, columns = 2 }: GalleryProps) => {
+const GalleryImageTop = ({
+  items,
+  columns = 2,
+  background = 'white',
+}: GalleryProps) => {
   const responsiveColumns = {
     mobile: 1,
     tablet: Math.min(2, columns),
@@ -41,7 +55,11 @@ const GalleryImageTop = ({ items, columns = 2 }: GalleryProps) => {
       className={`grid gap-6 sm:grid-cols-${responsiveColumns.tablet} lg:grid-cols-${responsiveColumns.desktop} lg:gap-8`}
     >
       {items.map((item) => (
-        <GalleryItemComponent key={item.title} item={item} />
+        <GalleryItemComponent
+          key={item.title}
+          item={item}
+          background={background}
+        />
       ))}
     </div>
   );
@@ -59,6 +77,7 @@ export function Gallery({
   items,
   variant = 'default',
   columns = 2,
+  background = 'white',
 }: GalleryProps) {
   if (variant === 'grid') {
     return <GalleryGrid items={items} />;
@@ -69,7 +88,13 @@ export function Gallery({
   }
 
   if (variant === 'image-top') {
-    return <GalleryImageTop items={items} columns={columns} />;
+    return (
+      <GalleryImageTop
+        items={items}
+        columns={columns}
+        background={background}
+      />
+    );
   }
 
   // Default case
