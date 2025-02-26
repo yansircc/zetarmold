@@ -13,11 +13,11 @@ export default function Experts() {
     <main>
       <PageHeader {...PAGE_HEADER} headingLevel="h1" background="gray" />
 
-      <SectionWrapper>
+      <SectionWrapper background="gray">
         <Gallery items={DEV_SECTION.items} columns={3} />
       </SectionWrapper>
 
-      <SectionWrapper {...TIMELINE_SECTION} background="gray">
+      <SectionWrapper {...TIMELINE_SECTION}>
         <Timeline items={TIMELINE_ITEMS} />
       </SectionWrapper>
     </main>
