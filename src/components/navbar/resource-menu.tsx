@@ -18,15 +18,15 @@ export function ResourceMenu({ resourceItems }: ResourceMenuProps) {
             <NavigationMenuLink asChild>
               <Link
                 href={resourceItem.href}
-                className="hover:bg-muted/50 flex items-start gap-3 rounded-md p-3 transition-colors"
+                className="hover:bg-muted/50 group flex items-start gap-3 rounded-md p-3 transition-colors"
               >
                 {resourceItem.icon && (
-                  <div className="bg-muted flex h-10 w-10 shrink-0 items-center justify-center rounded-md">
-                    <resourceItem.icon className="h-5 w-5" />
+                  <div className="bg-muted flex h-10 w-10 shrink-0 items-center justify-center rounded-md transition-colors">
+                    <resourceItem.icon className="group-hover:text-primary h-5 w-5 transition-colors" />
                   </div>
                 )}
                 <div>
-                  <div className="hover:text-primary text-sm font-medium transition-colors">
+                  <div className="group-hover:text-primary text-sm font-medium transition-colors">
                     {resourceItem.title}
                   </div>
                   {resourceItem.description && (

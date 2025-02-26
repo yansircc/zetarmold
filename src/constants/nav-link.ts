@@ -11,7 +11,6 @@ import {
   Layers,
   Boxes,
   Box,
-  Cylinder,
   History,
   Printer,
   FlaskConical,
@@ -45,7 +44,6 @@ import {
   Waves,
   RotateCw,
   Disc,
-  Database,
 } from 'lucide-react';
 
 export interface DropdownItem {
@@ -219,6 +217,58 @@ const injectionMoldingItems: DropdownItem[] = [
     href: '/injection-molding/high-tempreture',
     description: 'Heat-resistant material processing.',
     icon: Flame,
+    dropdownItems: [
+      {
+        title: 'PEEK',
+        href: '/injection-molding/high-tempreture/peek',
+        description: 'Polyether ether ketone high-performance polymer.',
+        icon: Thermometer,
+      },
+      {
+        title: 'PTFE',
+        href: '/injection-molding/high-tempreture/ptfe',
+        description: 'Polytetrafluoroethylene with excellent heat resistance.',
+        icon: Thermometer,
+      },
+      {
+        title: 'PPSU',
+        href: '/injection-molding/high-tempreture/ppsu',
+        description: 'Polyphenylsulfone for high-temperature applications.',
+        icon: Thermometer,
+      },
+      {
+        title: 'PEI',
+        href: '/injection-molding/high-tempreture/pei',
+        description: 'Polyetherimide with high heat and chemical resistance.',
+        icon: Thermometer,
+      },
+      {
+        title: 'LCP',
+        href: '/injection-molding/high-tempreture/lcp',
+        description:
+          'Liquid Crystal Polymer for extreme temperature resistance.',
+        icon: Thermometer,
+      },
+      {
+        title: 'PPA',
+        href: '/injection-molding/high-tempreture/ppa',
+        description: 'Polyphthalamide for high-temperature structural parts.',
+        icon: Thermometer,
+      },
+      {
+        title: 'PET',
+        href: '/injection-molding/high-tempreture/pet',
+        description:
+          'Polyethylene terephthalate for heat-resistant applications.',
+        icon: Thermometer,
+      },
+      {
+        title: 'PA46',
+        href: '/injection-molding/high-tempreture/pa46',
+        description: 'Polyamide 46 with exceptional thermal stability.',
+        icon: Thermometer,
+      },
+    ],
   },
   {
     title: 'Hot Runner',
@@ -481,59 +531,19 @@ const servicesItems: DropdownItem[] = [
   },
 ];
 
-// Materials
-const materialItems: DropdownItem[] = [
-  {
-    title: 'General Plastics',
-    href: '/materials/general',
-    description: 'Common plastic materials (PP, ABS, PC, PS, PE).',
-    icon: Box,
-  },
-  {
-    title: 'Advanced Plastics',
-    href: '/materials/advanced',
-    description: 'High-performance materials (PEEK, PTFE, LCP, PA46).',
-    icon: Cylinder,
-  },
-  {
-    title: 'Material Selection Guide',
-    href: '/material-guide',
-    description: 'Guide for selecting the right materials.',
-    icon: FileStack,
-  },
-];
-
-// Process
-const processItems: DropdownItem[] = [
-  {
-    title: 'Mold Development Process',
-    href: '/process/mold',
-    description: 'Our mold development workflow.',
-    icon: Workflow,
-  },
-  {
-    title: 'Production Process',
-    href: '/process/production',
-    description: 'Our manufacturing process workflow.',
-    icon: GitGraph,
-  },
-];
-
 // Resources
 const resourceItems: DropdownItem[] = [
-  {
-    title: 'Materials',
-    href: '/materials',
-    description: 'Plastic and rubber material information.',
-    icon: Database,
-    dropdownItems: materialItems,
-  },
   {
     title: 'Process',
     href: '/process',
     description: 'Manufacturing process information.',
     icon: Workflow,
-    dropdownItems: processItems,
+  },
+  {
+    title: 'Technical Blog',
+    href: '/blog',
+    description: 'Explore the latest in injection molding technology.',
+    icon: FileStack,
   },
 ];
 

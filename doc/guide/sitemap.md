@@ -32,6 +32,14 @@
 │ │ ├── IMD/IML工艺(IMD Injection Molding) (/injection-molding/imd)
 │ │ ├── PVC注塑 (PVC Injection Molding) (/injection-molding/pvc)
 │ │ ├── 高温材料注塑 (High Temperature Injection Molding) (/injection-molding/high-tempreture)
+│ │ │ ├── PEEK (/injection-molding/high-tempreture/peek)
+│ │ │ ├── PTFE (/injection-molding/high-tempreture/ptfe)
+│ │ │ ├── PPSU (/injection-molding/high-tempreture/ppsu)
+│ │ │ ├── PEI (/injection-molding/high-tempreture/pei)
+│ │ │ ├── LCP (/injection-molding/high-tempreture/lcp)
+│ │ │ ├── PPA (/injection-molding/high-tempreture/ppa)
+│ │ │ ├── PET (/injection-molding/high-tempreture/pet)
+│ │ │ └── PA46 (/injection-molding/high-tempreture/pa46)
 │ │ └── 热流道注塑模具 (hot Runner Injection Molding) (/injection-molding/hot-runner-molding)
 │ ├── 硅胶成型 (Silicone Rubber Molding)
 │ │ ├── 液态硅胶注塑 (Liquid Silicone Rubber Injection Molding)(/silicone-rubber-molding/liquid-injection)
@@ -75,6 +83,8 @@
 │ ├── 工艺流程 (/process)
 │ │ ├── 模具开发流程 (/process/mold)
 │ │ └── 生产流程图 (/process/production)
+│ │
+│ ├── 技术博客 (Technical Blog) (/blog)
 │
 ├── 在线询价 (/contact)
 │
