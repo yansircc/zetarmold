@@ -75,14 +75,15 @@
 │ │ └── 热板焊接 (Hot Plate Welding) (/plastic-welding/hot-plate-welding)
 │
 ├── 资源(Resource)  
-│ ├── 材料(Material)
-│ │ ├── 通用塑料 (/materials/general) (包含pp、abs、pc、PS、PE)
-│ │ ├── 高性能塑料 (/materials/advanced) (包含peek、ptfe、lcp、PA46)
-│ │ └── 选材指南 (/material-guide)
+│ ├── 选材指南(Material Guide)
+│ │ ├── ABS指南 (ABS Guide) (/resource/materials-guide/abs)
+│ │ ├── PP指南 (PP Guide) (/resource/materials-guide/pp)
+│ │ ├── PC指南 (PC Guide) (/resource/materials-guide/pc)
+│ │ ├── PS指南 (PS Guide) (/resource/materials-guide/ps)
+│ │ ├── PA指南 (PA Guide) (/resource/materials-guide/pa)
+│ │ ├── PE指南 (PE Guide) (/resource/materials-guide/pe)
 │ │
 │ ├── 工艺流程 (/process)
-│ │ ├── 模具开发流程 (/process/mold)
-│ │ └── 生产流程图 (/process/production)
 │ │
 │ ├── 技术博客 (Technical Blog) (/blog)
 │
