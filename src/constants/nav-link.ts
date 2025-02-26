@@ -213,6 +213,12 @@ const injectionMoldingItems: DropdownItem[] = [
     icon: Box,
   },
   {
+    title: 'Hot Runner',
+    href: '/injection-molding/hot-runner-molding',
+    description: 'Advanced hot runner technology.',
+    icon: GitGraph,
+  },
+  {
     title: 'High Temperature',
     href: '/injection-molding/high-tempreture',
     description: 'Heat-resistant material processing.',
@@ -269,12 +275,6 @@ const injectionMoldingItems: DropdownItem[] = [
         icon: Thermometer,
       },
     ],
-  },
-  {
-    title: 'Hot Runner',
-    href: '/injection-molding/hot-runner-molding',
-    description: 'Advanced hot runner technology.',
-    icon: GitGraph,
   },
 ];
 
@@ -531,8 +531,55 @@ const servicesItems: DropdownItem[] = [
   },
 ];
 
+// Materials Guide
+const materialItems: DropdownItem[] = [
+  {
+    title: 'ABS',
+    href: '/materials-guide/abs',
+    description: 'ABS material guide.',
+    icon: FileStack,
+  },
+  {
+    title: 'PP',
+    href: '/materials-guide/pp',
+    description: 'PP material guide.',
+    icon: FileStack,
+  },
+  {
+    title: 'PC',
+    href: '/materials-guide/pc',
+    description: 'PC material guide.',
+    icon: FileStack,
+  },
+  {
+    title: 'PS',
+    href: '/materials-guide/ps',
+    description: 'PS material guide.',
+    icon: FileStack,
+  },
+  {
+    title: 'PA',
+    href: '/materials-guide/pa',
+    description: 'PA material guide.',
+    icon: FileStack,
+  },
+  {
+    title: 'PE',
+    href: '/materials-guide/pe',
+    description: 'PE material guide.',
+    icon: FileStack,
+  },
+];
+
 // Resources
 const resourceItems: DropdownItem[] = [
+  {
+    title: 'Materials Guide',
+    href: '/materials-guide',
+    description: 'Materials guide for injection molding.',
+    icon: FileStack,
+    dropdownItems: materialItems,
+  },
   {
     title: 'Process',
     href: '/process',
