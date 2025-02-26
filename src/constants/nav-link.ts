@@ -9,215 +9,549 @@ import {
   Component,
   Shapes,
   Layers,
-  PenTool,
-  Palette,
   Boxes,
   Box,
-  Blocks,
   Cylinder,
-  Combine,
-  BookOpen,
-  Newspaper,
-  GraduationCap,
-  Video,
+  History,
+  Printer,
+  FlaskConical,
+  Wrench,
+  Gauge,
+  ShieldCheck,
+  Droplets,
+  Stamp,
+  Paintbrush,
+  Zap,
+  Cog,
+  Sparkles,
+  FileStack,
+  Flame,
+  Scissors,
+  Microscope,
+  BadgeCheck,
+  Car,
+  Layers3,
+  Puzzle,
+  Dices,
+  Shrink,
+  Sticker,
+  Thermometer,
+  Droplet,
+  Scale,
+  Hammer,
+  Lightbulb,
+  Brush,
+  Wand2,
+  Waves,
+  RotateCw,
+  Disc,
+  Database,
 } from 'lucide-react';
 
-interface DropdownItem {
+export interface DropdownItem {
   title: string;
   href: string;
   description?: string;
   icon?: React.ComponentType<LucideProps>;
+  dropdownItems?: DropdownItem[];
 }
 
-interface NavLink {
+export interface NavLink {
   label: string;
   href: string;
   dropdownItems?: DropdownItem[];
 }
 
-const aboutItems: DropdownItem[] = [
+// Company
+const companyItems: DropdownItem[] = [
   {
-    title: 'Company History',
-    href: '/our-history',
-    description: 'Our company history and origins.',
+    title: 'Company Profile',
+    href: '/about',
+    description: 'Learn about our company and mission.',
     icon: Building2,
   },
   {
-    title: 'Professional Team',
-    href: '/our-team',
+    title: 'Company History',
+    href: '/history',
+    description: 'Our company history and milestones.',
+    icon: History,
+  },
+  {
+    title: 'Technical Team',
+    href: '/experts',
     description: 'Meet our expert injection molding team.',
     icon: Users,
   },
   {
-    title: 'Quality Inspection',
-    href: '/quality-inspection',
+    title: 'Equipment List',
+    href: '/equipments',
+    description: 'Explore our advanced manufacturing equipment.',
+    icon: Factory,
+  },
+  {
+    title: 'Quality Assurance',
+    href: '/quality-assurance',
     description: 'Our rigorous quality control process.',
     icon: ClipboardCheck,
   },
+];
+
+// Small Batch Solutions
+const smallBatchItems: DropdownItem[] = [
   {
-    title: 'Mold Making Equipments',
-    href: '/mold-making-equipments',
-    description: 'Explore our advanced mold making equipment.',
-    icon: Factory,
+    title: '3D Printing Mold',
+    href: '/small-batch/3d-printing-mold',
+    description: 'Rapid tooling with 3D printed molds.',
+    icon: Printer,
   },
   {
-    title: 'Injection Production Equipments',
-    href: '/injection-production-equipments',
-    description: 'Explore our advanced injection production equipment.',
-    icon: Factory,
+    title: 'RIM',
+    href: '/small-batch/RIM',
+    description: 'Reaction Injection Molding for small batches.',
+    icon: FlaskConical,
   },
   {
-    title: 'Injection Molding Workflow',
-    href: '/injection-molding-workflow',
-    description: 'Our injection molding workflow.',
-    icon: Workflow,
-  },
-  {
-    title: 'Mold Making Workflow',
-    href: '/mold-making-workflow',
-    description: 'Our mold making workflow.',
-    icon: Workflow,
+    title: 'Aluminum Mold',
+    href: '/small-batch/aluminum-mold',
+    description: 'Cost-effective aluminum tooling solutions.',
+    icon: Wrench,
   },
 ];
 
+// Mold Development
+const moldDevelopmentItems: DropdownItem[] = [
+  {
+    title: 'High Volume',
+    href: '/mold-development/high-volume',
+    description: 'Durable molds for high-volume production.',
+    icon: Gauge,
+  },
+  {
+    title: 'Corrosion Resistant',
+    href: '/mold-development/corrosion-resistant',
+    description: 'Molds resistant to chemical corrosion.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'High Temperature',
+    href: '/mold-development/high-temperature',
+    description: 'Heat-resistant mold solutions.',
+    icon: Thermometer,
+  },
+  {
+    title: 'Wear Resistant',
+    href: '/mold-development/wear-resistant',
+    description: 'Durable wear-resistant mold designs.',
+    icon: Hammer,
+  },
+  {
+    title: 'Impact Resistant',
+    href: '/mold-development/impact-resistant',
+    description: 'Molds designed for impact resistance.',
+    icon: Zap,
+  },
+  {
+    title: 'Precision Polish',
+    href: '/mold-development/precision-polish',
+    description: 'High-precision polished mold surfaces.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Medical Grade',
+    href: '/mold-development/medical-grade',
+    description: 'Specialized molds for medical applications.',
+    icon: Microscope,
+  },
+  {
+    title: 'FDA/CE Grade',
+    href: '/mold-development/FDA/CE-grade',
+    description: 'Certified molds for regulated industries.',
+    icon: BadgeCheck,
+  },
+  {
+    title: 'Automotive',
+    href: '/mold-development/automotive',
+    description: 'Automotive-standard injection molds.',
+    icon: Car,
+  },
+];
+
+// Injection Molding
+const injectionMoldingItems: DropdownItem[] = [
+  {
+    title: '2K',
+    href: '/injection-molding/2k',
+    description: 'Two-component injection molding process.',
+    icon: Layers3,
+  },
+  {
+    title: 'Overmolding',
+    href: '/injection-molding/overmolding',
+    description: 'Multi-material overmolding process.',
+    icon: Puzzle,
+  },
+  {
+    title: 'Insert Molding',
+    href: '/injection-molding/insert-molding',
+    description: 'Embedding components during molding.',
+    icon: Dices,
+  },
+  {
+    title: 'Thin Wall',
+    href: '/injection-molding/thin-wall',
+    description: 'Precision thin-walled part production.',
+    icon: Shrink,
+  },
+  {
+    title: 'IMD',
+    href: '/injection-molding/imd',
+    description: 'In-mold decoration technology.',
+    icon: Sticker,
+  },
+  {
+    title: 'PVC',
+    href: '/injection-molding/pvc',
+    description: 'Specialized PVC material molding.',
+    icon: Box,
+  },
+  {
+    title: 'High Temperature',
+    href: '/injection-molding/high-tempreture',
+    description: 'Heat-resistant material processing.',
+    icon: Flame,
+  },
+  {
+    title: 'Hot Runner',
+    href: '/injection-molding/hot-runner-molding',
+    description: 'Advanced hot runner technology.',
+    icon: GitGraph,
+  },
+];
+
+// Silicone Rubber Molding
+const siliconeMoldingItems: DropdownItem[] = [
+  {
+    title: 'Liquid Silicone Rubber',
+    href: '/silicone-rubber-molding/liquid-injection',
+    description: 'Liquid silicone injection process.',
+    icon: Droplets,
+  },
+  {
+    title: 'Silicone Rubber Compression',
+    href: '/silicone-rubber-molding/compression',
+    description: 'Compression molding for silicone parts.',
+    icon: Scale,
+  },
+  {
+    title: 'Silicone Rubber Extrusion',
+    href: '/silicone-rubber-molding/extrusion',
+    description: 'Extrusion process for silicone products.',
+    icon: Scissors,
+  },
+];
+
+// 3D Printing
+const threeDPrintingItems: DropdownItem[] = [
+  {
+    title: 'PolyJet Printing',
+    href: '/rapid-prototyping/3d-printing/polyjet',
+    description: 'High-precision multi-material printing.',
+    icon: Printer,
+  },
+  {
+    title: 'MJF Printing',
+    href: '/rapid-prototyping/3d-printing/mjf',
+    description: 'Multi Jet Fusion technology.',
+    icon: Printer,
+  },
+  {
+    title: 'SLA Printing',
+    href: '/rapid-prototyping/3d-printing/sla',
+    description: 'Stereolithography 3D printing.',
+    icon: Printer,
+  },
+  {
+    title: 'SLS Printing',
+    href: '/rapid-prototyping/3d-printing/sls',
+    description: 'Selective Laser Sintering technology.',
+    icon: Printer,
+  },
+  {
+    title: 'DLP Printing',
+    href: '/rapid-prototyping/3d-printing/dlp',
+    description: 'Digital Light Processing printing.',
+    icon: Printer,
+  },
+  {
+    title: 'SLM Printing',
+    href: '/rapid-prototyping/3d-printing/slm',
+    description: 'Selective Laser Melting for metal parts.',
+    icon: Printer,
+  },
+  {
+    title: 'FDM Printing',
+    href: '/rapid-prototyping/3d-printing/fdm',
+    description: 'Fused Deposition Modeling technology.',
+    icon: Printer,
+  },
+];
+
+// Rapid Prototyping
+const rapidPrototypingItems: DropdownItem[] = [
+  {
+    title: '3D Printing',
+    href: '/rapid-prototyping/3d-printing',
+    description: 'Various 3D printing technologies.',
+    icon: Printer,
+    dropdownItems: threeDPrintingItems,
+  },
+  {
+    title: 'CNC Machining',
+    href: '/rapid-prototyping/cnc-machining',
+    description: 'Precision CNC machined prototypes.',
+    icon: Cog,
+  },
+  {
+    title: 'Silicone Rubber Casting',
+    href: '/rapid-prototyping/silicone-casting',
+    description: 'Silicone casting for prototype parts.',
+    icon: Droplet,
+  },
+];
+
+// Logo Print
+const logoPrintItems: DropdownItem[] = [
+  {
+    title: 'Laser Logo',
+    href: '/logo-print/laser-marking',
+    description: 'Precision laser marking technology.',
+    icon: Lightbulb,
+  },
+  {
+    title: 'Pad Printing',
+    href: '/logo-print/pad-printing',
+    description: 'Pad printing for curved surfaces.',
+    icon: Stamp,
+  },
+  {
+    title: 'UV Printing',
+    href: '/logo-print/uv-printing',
+    description: 'UV-cured printing technology.',
+    icon: Printer,
+  },
+  {
+    title: 'Hot Stamping',
+    href: '/logo-print/hot-stamping',
+    description: 'Metallic foil stamping process.',
+    icon: Flame,
+  },
+  {
+    title: 'Screen Printing',
+    href: '/logo-print/screen-printing',
+    description: 'Screen printing for flat surfaces.',
+    icon: Boxes,
+  },
+  {
+    title: 'Heat Transfer Printing',
+    href: '/logo-print/heat-transfer-printing',
+    description: 'Heat transfer decoration process.',
+    icon: Thermometer,
+  },
+];
+
+// Surface Treatment
+const surfaceTreatmentItems: DropdownItem[] = [
+  {
+    title: 'Electroplating',
+    href: '/surface-treatment/electroplating',
+    description: 'Metal plating for plastic parts.',
+    icon: Layers,
+  },
+  {
+    title: 'Vacuum Deposition',
+    href: '/surface-treatment/vacuum-deposition',
+    description: 'Vacuum metallization process.',
+    icon: Layers3,
+  },
+  {
+    title: 'Painting',
+    href: '/surface-treatment/painting',
+    description: 'Professional painting services.',
+    icon: Paintbrush,
+  },
+  {
+    title: 'Rubber Painting',
+    href: '/surface-treatment/rubber-painting',
+    description: 'Rubber-like coating application.',
+    icon: Brush,
+  },
+  {
+    title: 'UV Painting',
+    href: '/surface-treatment/uv-painting',
+    description: 'UV-cured coating technology.',
+    icon: Wand2,
+  },
+];
+
+// Welding Process
+const weldingItems: DropdownItem[] = [
+  {
+    title: 'Ultrasonic Welding',
+    href: '/plastic-welding/ultrasonic-welding',
+    description: 'Ultrasonic vibration welding technology.',
+    icon: Waves,
+  },
+  {
+    title: 'Spin Welding',
+    href: '/plastic-welding/spin-welding',
+    description: 'Rotational friction welding process.',
+    icon: RotateCw,
+  },
+  {
+    title: 'Hot Plate Welding',
+    href: '/plastic-welding/hot-plate-welding',
+    description: 'Thermal welding with heated plates.',
+    icon: Disc,
+  },
+];
+
+// Services - Main category with subcategories
 const servicesItems: DropdownItem[] = [
   {
-    title: 'Injection Molding Services',
+    title: 'Small Batch Solutions',
+    href: '/small-batch',
+    description: 'Solutions for small production runs.',
+    icon: Boxes,
+    dropdownItems: smallBatchItems,
+  },
+  {
+    title: 'Mass Production',
+    href: '/mass-production',
+    description: 'High-volume manufacturing services.',
+    icon: Factory,
+  },
+  {
+    title: 'Mold Development',
+    href: '/mold-development',
+    description: 'Custom mold design and development.',
+    icon: Wrench,
+    dropdownItems: moldDevelopmentItems,
+  },
+  {
+    title: 'Injection Molding',
     href: '/injection-molding',
-    description: 'Comprehensive injection molding solutions.',
+    description: 'Comprehensive injection molding services.',
     icon: Component,
+    dropdownItems: injectionMoldingItems,
+  },
+  {
+    title: 'Silicone Rubber Molding',
+    href: '/silicone-rubber-molding',
+    description: 'Silicone rubber molding solutions.',
+    icon: Droplets,
+    dropdownItems: siliconeMoldingItems,
   },
   {
     title: 'Rapid Prototyping',
     href: '/rapid-prototyping',
     description: 'Fast prototyping for design validation.',
     icon: Shapes,
+    dropdownItems: rapidPrototypingItems,
   },
   {
-    title: 'Post Processing',
-    href: '/post-processing',
-    description: 'Enhancing part quality and performance.',
-    icon: Layers,
+    title: 'Logo Print',
+    href: '/logo-print',
+    description: 'Various logo printing technologies.',
+    icon: Stamp,
+    dropdownItems: logoPrintItems,
+  },
+  {
+    title: 'Surface Treatment',
+    href: '/surface-treatment',
+    description: 'Surface finishing and treatment options.',
+    icon: Paintbrush,
+    dropdownItems: surfaceTreatmentItems,
+  },
+  {
+    title: 'Welding Process',
+    href: '/plastic-welding',
+    description: 'Plastic welding technologies.',
+    icon: Zap,
+    dropdownItems: weldingItems,
   },
 ];
 
-const injectionMoldingItems: DropdownItem[] = [
+// Materials
+const materialItems: DropdownItem[] = [
   {
-    title: 'Overmolding',
-    href: '/overmolding',
-    description: 'Multi-material injection molding process.',
-    icon: PenTool,
-  },
-  {
-    title: 'Insert Molding',
-    href: '/insert-molding',
-    description: 'Embedding components during molding.',
-    icon: Palette,
-  },
-  {
-    title: 'In-Mold Decoration Molding (IMD)',
-    href: '/imd-molding',
-    description: 'Decorative surface finishing in mold.',
-    icon: Boxes,
-  },
-  {
-    title: 'PVC Molding',
-    href: '/pvc-molding',
-    description: 'Specialized PVC material molding.',
+    title: 'General Plastics',
+    href: '/materials/general',
+    description: 'Common plastic materials (PP, ABS, PC, PS, PE).',
     icon: Box,
   },
   {
-    title: 'Thin Wall Molding',
-    href: '/thin-wall-molding',
-    description: 'Precision thin-walled part production.',
-    icon: Blocks,
-  },
-  {
-    title: 'High Temperature Molding',
-    href: '/high-temperature-molding',
-    description: 'Heat-resistant material processing.',
+    title: 'Advanced Plastics',
+    href: '/materials/advanced',
+    description: 'High-performance materials (PEEK, PTFE, LCP, PA46).',
     icon: Cylinder,
   },
+  {
+    title: 'Material Selection Guide',
+    href: '/material-guide',
+    description: 'Guide for selecting the right materials.',
+    icon: FileStack,
+  },
 ];
 
-const moldItems: DropdownItem[] = [
+// Process
+const processItems: DropdownItem[] = [
   {
-    title: 'Injection Mold',
-    href: '/injection-mold',
-    description: 'Standard injection mold solutions.',
-    icon: Component,
+    title: 'Mold Development Process',
+    href: '/process/mold',
+    description: 'Our mold development workflow.',
+    icon: Workflow,
   },
   {
-    title: 'MUD Mold',
-    href: '/mud-mold',
-    description: 'Master Unit Die mold systems.',
-    icon: Combine,
-  },
-  {
-    title: 'Hot Runner Mold',
-    href: '/hot-runner-mold',
-    description: 'Advanced hot runner technology.',
+    title: 'Production Process',
+    href: '/process/production',
+    description: 'Our manufacturing process workflow.',
     icon: GitGraph,
   },
-  {
-    title: 'Low Volume Mold',
-    href: '/low-volume-mold',
-    description: 'Cost-effective small batch production.',
-    icon: Boxes,
-  },
 ];
 
+// Resources
 const resourceItems: DropdownItem[] = [
   {
-    title: 'Industry Blog',
-    href: '/blog',
-    description: 'Injection molding insights and trends.',
-    icon: BookOpen,
+    title: 'Materials',
+    href: '/materials',
+    description: 'Plastic and rubber material information.',
+    icon: Database,
+    dropdownItems: materialItems,
   },
   {
-    title: 'Company News',
-    href: '/news',
-    description: 'Our latest company updates.',
-    icon: Newspaper,
-  },
-  {
-    title: 'Injection Molding Guides',
-    href: '/guides',
-    description: 'Learn molding techniques and best practices.',
-    icon: GraduationCap,
-  },
-  {
-    title: 'Video Center',
-    href: '/videos',
-    description: 'Visual demonstrations and expertise.',
-    icon: Video,
+    title: 'Process',
+    href: '/process',
+    description: 'Manufacturing process information.',
+    icon: Workflow,
+    dropdownItems: processItems,
   },
 ];
 
+// Main navigation structure
 export const navLinks: NavLink[] = [
   {
-    label: 'About',
-    href: '#about',
-    dropdownItems: aboutItems,
-  },
-  {
     label: 'Services',
-    href: '#services',
+    href: '/services',
     dropdownItems: servicesItems,
   },
   {
-    label: 'Injection Molding',
-    href: '#injection-molding',
-    dropdownItems: injectionMoldingItems,
-  },
-  {
-    label: 'Mold',
-    href: '#mold',
-    dropdownItems: moldItems,
+    label: 'Company',
+    href: '/company',
+    dropdownItems: companyItems,
   },
   {
     label: 'Resources',
-    href: '#resources',
+    href: '/resources',
     dropdownItems: resourceItems,
   },
   {
