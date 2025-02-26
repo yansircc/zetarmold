@@ -172,13 +172,77 @@ const moldDevelopmentItems: DropdownItem[] = [
     description: 'Automotive-standard injection molds.',
     icon: Car,
   },
+  {
+    title: 'MUD',
+    href: '/mold-development/MUD-mold',
+    description: 'MUD injection molds for high-volume production.',
+    icon: Layers,
+  },
+];
+
+const highTemperatureItems: DropdownItem[] = [
+  {
+    title: 'PEEK',
+    href: '/injection-molding/high-tempreture/peek',
+    description: 'Polyether ether ketone high-performance polymer.',
+    icon: Thermometer,
+  },
+  {
+    title: 'PTFE',
+    href: '/injection-molding/high-tempreture/ptfe',
+    description: 'Polytetrafluoroethylene with excellent heat resistance.',
+    icon: Thermometer,
+  },
+  {
+    title: 'PPSU',
+    href: '/injection-molding/high-tempreture/ppsu',
+    description: 'Polyphenylsulfone for high-temperature applications.',
+    icon: Thermometer,
+  },
+  {
+    title: 'PEI',
+    href: '/injection-molding/high-tempreture/pei',
+    description: 'Polyetherimide with high heat and chemical resistance.',
+    icon: Thermometer,
+  },
+  {
+    title: 'LCP',
+    href: '/injection-molding/high-tempreture/lcp',
+    description: 'Liquid Crystal Polymer for extreme temperature resistance.',
+    icon: Thermometer,
+  },
+  {
+    title: 'PPA',
+    href: '/injection-molding/high-tempreture/ppa',
+    description: 'Polyphthalamide for high-temperature structural parts.',
+    icon: Thermometer,
+  },
+  {
+    title: 'PET',
+    href: '/injection-molding/high-tempreture/pet',
+    description: 'Polyethylene terephthalate for heat-resistant applications.',
+    icon: Thermometer,
+  },
+  {
+    title: 'PA46',
+    href: '/injection-molding/high-tempreture/pa46',
+    description: 'Polyamide 46 with exceptional thermal stability.',
+    icon: Thermometer,
+  },
 ];
 
 // Injection Molding
 const injectionMoldingItems: DropdownItem[] = [
   {
-    title: '2K',
-    href: '/injection-molding/2k',
+    title: 'High Temperature Molding',
+    href: '/injection-molding/high-temperature-molding',
+    description: 'Heat-resistant material processing.',
+    icon: Flame,
+    dropdownItems: highTemperatureItems,
+  },
+  {
+    title: '2K Molding',
+    href: '/injection-molding/2k-molding',
     description: 'Two-component injection molding process.',
     icon: Layers3,
   },
@@ -195,86 +259,28 @@ const injectionMoldingItems: DropdownItem[] = [
     icon: Dices,
   },
   {
-    title: 'Thin Wall',
-    href: '/injection-molding/thin-wall',
+    title: 'Thin Wall Molding',
+    href: '/injection-molding/thin-wall-molding',
     description: 'Precision thin-walled part production.',
     icon: Shrink,
   },
   {
-    title: 'IMD',
-    href: '/injection-molding/imd',
+    title: 'IMD Molding',
+    href: '/injection-molding/imd-molding',
     description: 'In-mold decoration technology.',
     icon: Sticker,
   },
   {
-    title: 'PVC',
-    href: '/injection-molding/pvc',
+    title: 'PVC Molding',
+    href: '/injection-molding/pvc-molding',
     description: 'Specialized PVC material molding.',
     icon: Box,
   },
   {
-    title: 'Hot Runner',
+    title: 'Hot Runner Molding',
     href: '/injection-molding/hot-runner-molding',
     description: 'Advanced hot runner technology.',
     icon: GitGraph,
-  },
-  {
-    title: 'High Temperature',
-    href: '/injection-molding/high-tempreture',
-    description: 'Heat-resistant material processing.',
-    icon: Flame,
-    dropdownItems: [
-      {
-        title: 'PEEK',
-        href: '/injection-molding/high-tempreture/peek',
-        description: 'Polyether ether ketone high-performance polymer.',
-        icon: Thermometer,
-      },
-      {
-        title: 'PTFE',
-        href: '/injection-molding/high-tempreture/ptfe',
-        description: 'Polytetrafluoroethylene with excellent heat resistance.',
-        icon: Thermometer,
-      },
-      {
-        title: 'PPSU',
-        href: '/injection-molding/high-tempreture/ppsu',
-        description: 'Polyphenylsulfone for high-temperature applications.',
-        icon: Thermometer,
-      },
-      {
-        title: 'PEI',
-        href: '/injection-molding/high-tempreture/pei',
-        description: 'Polyetherimide with high heat and chemical resistance.',
-        icon: Thermometer,
-      },
-      {
-        title: 'LCP',
-        href: '/injection-molding/high-tempreture/lcp',
-        description:
-          'Liquid Crystal Polymer for extreme temperature resistance.',
-        icon: Thermometer,
-      },
-      {
-        title: 'PPA',
-        href: '/injection-molding/high-tempreture/ppa',
-        description: 'Polyphthalamide for high-temperature structural parts.',
-        icon: Thermometer,
-      },
-      {
-        title: 'PET',
-        href: '/injection-molding/high-tempreture/pet',
-        description:
-          'Polyethylene terephthalate for heat-resistant applications.',
-        icon: Thermometer,
-      },
-      {
-        title: 'PA46',
-        href: '/injection-molding/high-tempreture/pa46',
-        description: 'Polyamide 46 with exceptional thermal stability.',
-        icon: Thermometer,
-      },
-    ],
   },
 ];
 
@@ -523,8 +529,8 @@ const servicesItems: DropdownItem[] = [
     dropdownItems: surfaceTreatmentItems,
   },
   {
-    title: 'Welding Process',
-    href: '/plastic-welding',
+    title: 'Welding Assembly',
+    href: '/welding-assembly',
     description: 'Plastic welding technologies.',
     icon: Zap,
     dropdownItems: weldingItems,

@@ -138,7 +138,7 @@ export function ServiceMenu({
 
             {serviceItem.dropdownItems &&
               serviceItem.dropdownItems.length > 0 && (
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-2">
                   {serviceItem.dropdownItems.map((subItem, subIndex) => (
                     <div
                       key={subIndex}
