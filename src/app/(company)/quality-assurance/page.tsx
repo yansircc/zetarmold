@@ -5,6 +5,7 @@ import { VerticalScrollingItems } from '@/components/sections/VerticalScrollingI
 import { SectionWrapper } from '@/components/section-wrapper';
 import { Gallery } from '@/components/sections/gallery';
 import { ServiceCards } from '@/components/ui/card-2';
+// // 临时添加以触发 Tailwind 检测
 
 export default function QualityAssurance() {
   return (
@@ -20,7 +21,7 @@ export default function QualityAssurance() {
         title={QC_EQUIPMENT.title}
         description={QC_EQUIPMENT.description}
       >
-        <Gallery items={QC_EQUIPMENT.items} columns={4} />
+        <Gallery items={QC_EQUIPMENT.items} columns={3} />
       </SectionWrapper>
 
       <Section2ColSticky

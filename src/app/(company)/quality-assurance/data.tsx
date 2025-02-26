@@ -67,13 +67,6 @@ const QC_EQUIPMENT_ITEMS = [
       'https://zetarmold.com/wp-content/uploads/2024/04/%E5%9B%BE%E7%89%8717.png',
   },
   {
-    title: 'Colorimeter',
-    description:
-      'The Colorimeter is used to measure the color of surfaces, which is important in industries requiring aesthetic consistency. In mold processing, it ensures that colored plastic parts meet design specifications.',
-    image:
-      'https://zetarmold.com/wp-content/uploads/2024/04/%E5%9B%BE%E7%89%8718.png',
-  },
-  {
     title: 'Gloss Meter',
     description:
       'The Gloss Meter measures the gloss of surfaces to ensure the desired visual appearance of finished products. It is particularly important in industries where surface finish quality is critical, such as automotive or consumer goods.',
@@ -189,3 +182,19 @@ export const CERTIFICATION = {
   },
   items: CERTIFICATION_ITEMS,
 };
+
+{
+  /* 
+
+
+
+    title: 'Colorimeter',
+    description:
+      'The Colorimeter is used to measure the color of surfaces, which is important in industries requiring aesthetic consistency. In mold processing, it ensures that colored plastic parts meet design specifications.',
+    image:
+      'https://zetarmold.com/wp-content/uploads/2024/04/%E5%9B%BE%E7%89%8718.png',
+  },
+
+
+*/
+}
