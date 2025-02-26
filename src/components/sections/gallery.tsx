@@ -2,7 +2,7 @@ import { ImageWithDialog } from './media-dialog';
 
 export interface GalleryItem {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
   youtubeId?: string;
   background?: 'gray' | 'white';
@@ -33,7 +33,9 @@ const GalleryItemComponent = ({
         <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
           {item.title}
         </h3>
-        <p className="text-muted-foreground lg:text-lg">{item.description}</p>
+        {item.description && (
+          <p className="text-muted-foreground lg:text-lg">{item.description}</p>
+        )}
       </div>
     </div>
   );
