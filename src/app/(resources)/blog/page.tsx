@@ -28,12 +28,8 @@ async function fetchPosts() {
   try {
     const response = await api.get<PostsApiResponse>('/posts');
 
-    // Debug the response structure
-    console.log('API Response:', JSON.stringify(response, null, 2));
-
     // Extract posts from the docs array
     if (!response.docs) {
-      console.error('No docs array found in API response:', response);
       return [];
     }
 
@@ -54,9 +50,6 @@ export default async function BlogArchive({ searchParams }: BlogArchiveProps) {
 
   // Fetch posts from API
   const posts = await fetchPosts();
-
-  // Debug the posts
-  console.log('Posts:', posts.length, posts[0]?.id);
 
   // Use the pagination utility to get paginated posts and metadata
   const {

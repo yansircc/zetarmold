@@ -109,8 +109,6 @@ function getAbsoluteUrl(url: string): string {
 }
 
 export const PostCard = ({ post }: { post: Post }) => {
-  console.log('Post content:', JSON.stringify(post.content, null, 2));
-
   // Get image URL or use placeholder
   let imageUrl = '/images/placeholder/1.svg';
 
