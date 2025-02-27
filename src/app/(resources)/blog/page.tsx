@@ -1,34 +1,69 @@
-import { posts, type Post } from '@/app/data/blog-archive-data';
+import { type Post } from '@/app/types/post';
 import { PageHeader } from '@/components/sections/templates';
 import { SectionWrapper } from '@/components/section-wrapper';
 import { PostCard } from './post-card';
 import { BlogPagination } from './pagination';
 import { paginatePosts } from './utils';
+import api from '@/lib/api';
 
 // Number of posts per page
 const POSTS_PER_PAGE = 5;
 
-async function getPosts(): Promise<Post[]> {
-  return posts;
+// API response interface
+interface PostsApiResponse {
+  docs: Post[];
+  totalDocs: number;
+  limit: number;
+  totalPages: number;
+  page: number;
+  pagingCounter: number;
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  prevPage: number | null;
+  nextPage: number | null;
+}
+
+// Function to fetch posts from the API
+async function fetchPosts() {
+  try {
+    const response = await api.get<PostsApiResponse>('/posts');
+
+    // Debug the response structure
+    console.log('API Response:', JSON.stringify(response, null, 2));
+
+    // Extract posts from the docs array
+    if (!response.docs) {
+      console.error('No docs array found in API response:', response);
+      return [];
+    }
+
+    return response.docs;
+  } catch (error) {
+    console.error('Failed to fetch posts:', error);
+    return [];
+  }
 }
 
 interface BlogArchiveProps {
-  searchParams: Promise<{ page?: string }>;
+  searchParams: { page?: string };
 }
 
 export default async function BlogArchive({ searchParams }: BlogArchiveProps) {
-  const allPosts = await getPosts();
-  const { page } = await searchParams;
-
   // Get current page from URL or default to 1
-  const currentPage = Number(page) || 1;
+  const currentPage = Number(searchParams.page) || 1;
+
+  // Fetch posts from API
+  const posts = await fetchPosts();
+
+  // Debug the posts
+  console.log('Posts:', posts.length, posts[0]?.id);
 
   // Use the pagination utility to get paginated posts and metadata
   const {
     paginatedItems,
     totalPages,
     currentPage: validCurrentPage,
-  } = paginatePosts(allPosts, currentPage, POSTS_PER_PAGE);
+  } = paginatePosts(posts, currentPage, POSTS_PER_PAGE);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-black">
@@ -40,15 +75,24 @@ export default async function BlogArchive({ searchParams }: BlogArchiveProps) {
       />
       <SectionWrapper>
         <div className="mx-auto max-w-4xl space-y-6">
-          {paginatedItems.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
+          {paginatedItems.length > 0 ? (
+            paginatedItems.map((post) => <PostCard key={post.id} post={post} />)
+          ) : (
+            <div className="py-10 text-center">
+              <h3 className="mb-2 text-xl font-medium">No posts found</h3>
+              <p className="text-muted-foreground">
+                Check back later for new content.
+              </p>
+            </div>
+          )}
 
-          <BlogPagination
-            currentPage={validCurrentPage}
-            totalPages={totalPages}
-            basePath="/blog"
-          />
+          {totalPages > 1 && (
+            <BlogPagination
+              currentPage={validCurrentPage}
+              totalPages={totalPages}
+              basePath="/blog"
+            />
+          )}
         </div>
       </SectionWrapper>
     </main>
