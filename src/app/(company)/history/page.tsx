@@ -11,7 +11,13 @@ import { Gallery } from '@/components/sections/gallery';
 export default function Experts() {
   return (
     <main>
-      <PageHeader {...PAGE_HEADER} headingLevel="h1" background="gray" />
+      <PageHeader
+        title={PAGE_HEADER.title}
+        description={PAGE_HEADER.description}
+        action={PAGE_HEADER.action}
+        headingLevel="h1"
+        background="gray"
+      />
 
       <SectionWrapper background="gray">
         <Gallery items={DEV_SECTION.items} columns={3} />
