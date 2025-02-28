@@ -34,8 +34,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  // eslint-disable-next-line @typescript-eslint/await-thenable
-  const { slug } = await params;
+  const { slug } = params;
   const post = await fetchPost(slug);
 
   if (!post) {
@@ -63,8 +62,7 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
-  // eslint-disable-next-line @typescript-eslint/await-thenable
-  const { slug } = await params;
+  const { slug } = params;
   const post = await fetchPost(slug);
 
   if (!post) {
