@@ -32,9 +32,9 @@ async function fetchPost(id: string): Promise<Post | null> {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await fetchPost(slug);
 
   if (!post) {
@@ -60,9 +60,9 @@ export async function generateMetadata({
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await fetchPost(slug);
 
   if (!post) {
