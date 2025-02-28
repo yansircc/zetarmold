@@ -41,12 +41,13 @@ async function fetchPosts() {
 }
 
 interface BlogArchiveProps {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }
 
 export default async function BlogArchive({ searchParams }: BlogArchiveProps) {
   // Get current page from URL or default to 1
-  const currentPage = Number(searchParams.page) || 1;
+  const resolvedSearchParams = await searchParams;
+  const currentPage = Number(resolvedSearchParams.page) || 1;
 
   // Fetch posts from API
   const posts = await fetchPosts();
