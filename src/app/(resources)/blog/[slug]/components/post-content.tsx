@@ -6,6 +6,7 @@ import {
   type ContentStructure,
 } from '../types/content-types';
 import api from '@/lib/api';
+import { extractTextFromNode } from '../utils/content-utils';
 
 interface PostContentProps {
   content: ContentStructure;
@@ -56,10 +57,8 @@ function renderContentNode(
     const level = node.tag ? parseInt(node.tag.replace('h', '')) : 2;
     const headingId = `heading-${index}`;
 
-    // Render the appropriate heading based on level
-    const headingContent = node.children?.map((child, childIndex) =>
-      renderContentNode(child, `${index}-${childIndex}`),
-    );
+    // Extract only the text content from the heading
+    const headingText = extractTextFromNode(node);
 
     switch (level) {
       case 1:
@@ -69,7 +68,7 @@ function renderContentNode(
             id={headingId}
             className="mt-8 mb-4 scroll-mt-20 font-serif text-3xl font-semibold"
           >
-            {headingContent}
+            {headingText}
           </h1>
         );
       case 2:
@@ -79,7 +78,7 @@ function renderContentNode(
             id={headingId}
             className="mt-6 mb-3 scroll-mt-20 font-serif text-2xl font-medium"
           >
-            {headingContent}
+            {headingText}
           </h2>
         );
       case 3:
@@ -89,7 +88,7 @@ function renderContentNode(
             id={headingId}
             className="mt-5 mb-2 scroll-mt-20 font-serif text-xl font-medium"
           >
-            {headingContent}
+            {headingText}
           </h3>
         );
       case 4:
@@ -99,7 +98,7 @@ function renderContentNode(
             id={headingId}
             className="mt-4 mb-2 scroll-mt-20 font-serif text-lg font-medium"
           >
-            {headingContent}
+            {headingText}
           </h4>
         );
       case 5:
@@ -109,7 +108,7 @@ function renderContentNode(
             id={headingId}
             className="mt-3 mb-1 scroll-mt-20 font-serif text-base font-medium"
           >
-            {headingContent}
+            {headingText}
           </h5>
         );
       case 6:
@@ -119,7 +118,7 @@ function renderContentNode(
             id={headingId}
             className="mt-3 mb-1 scroll-mt-20 font-serif text-base font-medium"
           >
-            {headingContent}
+            {headingText}
           </h6>
         );
       default:
@@ -129,7 +128,7 @@ function renderContentNode(
             id={headingId}
             className="mt-6 mb-3 scroll-mt-20 font-serif text-2xl font-medium"
           >
-            {headingContent}
+            {headingText}
           </h2>
         );
     }
