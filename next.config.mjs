@@ -29,6 +29,11 @@ const nextConfig = {
         hostname: 'zetarmold.com',
         pathname: '/wp-content/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: '*.cherrybox.dev',
+        pathname: '/**',
+      },
     ],
   },
 };
