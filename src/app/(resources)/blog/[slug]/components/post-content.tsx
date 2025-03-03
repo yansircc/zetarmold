@@ -25,6 +25,101 @@ function getAbsoluteUrl(url: string): string {
   return api.getFullUrl(url);
 }
 
+// Helper function to check if a string is a YouTube URL
+function isYouTubeUrl(url: string): boolean {
+  // Remove any leading non-URL characters
+  const cleanUrl = url.trim().replace(/^[^h]*https?:\/\//, 'https://');
+  const youtubeRegex =
+    /^https?:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
+  return youtubeRegex.test(cleanUrl);
+}
+
+// Helper function to check if a string is a Spotify URL
+function isSpotifyUrl(url: string): boolean {
+  // Remove any leading non-URL characters
+  const cleanUrl = url.trim().replace(/^[^h]*https?:\/\//, 'https://');
+  const spotifyRegex =
+    /^https?:\/\/(open\.)?spotify\.com\/([a-z]+)\/([a-zA-Z0-9]+)(\S*)?$/;
+  return spotifyRegex.test(cleanUrl);
+}
+
+// Helper function to extract YouTube video ID from URL
+function extractYouTubeVideoId(url: string): string | null {
+  // Remove any leading non-URL characters
+  const cleanUrl = url.trim().replace(/^[^h]*https?:\/\//, 'https://');
+  const youtubeRegex =
+    /^https?:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
+  const match = youtubeRegex.exec(cleanUrl);
+  return match ? match[3] : null;
+}
+
+// Helper function to extract Spotify ID and type from URL
+function extractSpotifyInfo(url: string): { id: string; type: string } | null {
+  // Remove any leading non-URL characters
+  const cleanUrl = url.trim().replace(/^[^h]*https?:\/\//, 'https://');
+  const spotifyRegex =
+    /^https?:\/\/(open\.)?spotify\.com\/([a-z]+)\/([a-zA-Z0-9]+)(\S*)?$/;
+  const match = spotifyRegex.exec(cleanUrl);
+
+  if (!match) return null;
+
+  return {
+    type: match[2], // track, album, playlist, episode, show
+    id: match[3], // Spotify ID
+  };
+}
+
+// Helper function to render YouTube embed
+function renderYouTubeEmbed(
+  url: string,
+  index: number | string,
+): React.ReactNode {
+  const videoId = extractYouTubeVideoId(url);
+  if (!videoId) return url;
+
+  return (
+    <div key={index} className="my-8 aspect-video w-full">
+      <iframe
+        width="100%"
+        height="100%"
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
+}
+
+// Helper function to render Spotify embed
+function renderSpotifyEmbed(
+  url: string,
+  index: number | string,
+): React.ReactNode {
+  const spotifyInfo = extractSpotifyInfo(url);
+  if (!spotifyInfo) return url;
+
+  return (
+    <div key={index} className="my-8">
+      <iframe
+        style={{ borderRadius: '12px' }}
+        src={`https://open.spotify.com/embed/${spotifyInfo.type}/${spotifyInfo.id}`}
+        width="100%"
+        height={
+          spotifyInfo.type === 'episode' || spotifyInfo.type === 'show'
+            ? '152'
+            : '352'
+        }
+        frameBorder="0"
+        allowFullScreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+  );
+}
+
 // Helper function to render content nodes
 function renderContentNode(
   node: ContentNode | null | undefined,
@@ -136,6 +231,56 @@ function renderContentNode(
 
   // Handle paragraph nodes
   if (node.type === 'paragraph') {
+    // Check if this paragraph contains only a YouTube or Spotify URL
+    const paragraphText = extractTextFromNode(node);
+
+    // Check if the text contains a YouTube or Spotify URL
+    if (paragraphText) {
+      const cleanText = paragraphText.trim();
+      if (
+        cleanText.includes('youtu.be/') ||
+        cleanText.includes('youtube.com/')
+      ) {
+        if (isYouTubeUrl(cleanText)) {
+          return renderYouTubeEmbed(cleanText, index);
+        }
+      } else if (cleanText.includes('spotify.com/')) {
+        if (isSpotifyUrl(cleanText)) {
+          return renderSpotifyEmbed(cleanText, index);
+        }
+      }
+    }
+
+    // Check for deeply nested paragraphs with YouTube or Spotify URLs
+    let currentNode = node;
+    let depth = 0;
+    const maxDepth = 5; // Prevent infinite loops
+
+    while (
+      currentNode.children?.length === 1 &&
+      currentNode.children[0].type === 'paragraph' &&
+      depth < maxDepth
+    ) {
+      currentNode = currentNode.children[0];
+      depth++;
+
+      const nestedText = extractTextFromNode(currentNode);
+      if (nestedText) {
+        if (
+          nestedText.includes('youtu.be/') ||
+          nestedText.includes('youtube.com/')
+        ) {
+          if (isYouTubeUrl(nestedText)) {
+            return renderYouTubeEmbed(nestedText, index);
+          }
+        } else if (nestedText.includes('spotify.com/')) {
+          if (isSpotifyUrl(nestedText)) {
+            return renderSpotifyEmbed(nestedText, index);
+          }
+        }
+      }
+    }
+
     return (
       <p key={index} className="text-muted-foreground mt-2 text-lg">
         {node.children?.map((child, childIndex) =>
@@ -145,40 +290,6 @@ function renderContentNode(
     );
   }
 
-  // Handle media blocks
-  if (
-    node.type === 'block' &&
-    node.fields?.blockType === 'mediaBlock' &&
-    node.fields?.media
-  ) {
-    const media = node.fields.media;
-    let imageUrl = '';
-
-    // Try to get the best image URL available
-    if (media.sizes?.medium?.url) {
-      imageUrl = getAbsoluteUrl(media.sizes.medium.url);
-    } else if (media.sizes?.small?.url) {
-      imageUrl = getAbsoluteUrl(media.sizes.small.url);
-    } else if (media.url) {
-      imageUrl = getAbsoluteUrl(media.url);
-    }
-
-    if (imageUrl) {
-      return (
-        <div key={index} className="my-8">
-          <Image
-            src={imageUrl}
-            alt={media.filename ?? 'Blog image'}
-            width={900}
-            height={500}
-            className="rounded-lg"
-          />
-        </div>
-      );
-    }
-  }
-
-  // Handle other node types or return null for unsupported types
   return null;
 }
 
@@ -210,20 +321,6 @@ export function PostContent({
           renderContentNode(node, index),
         )}
       </div>
-
-      {/* Example alert */}
-      {hasSections && (
-        <div className="mt-8">
-          <Alert className="my-8">
-            <Lightbulb className="h-4 w-4" />
-            <AlertTitle>Important Note</AlertTitle>
-            <AlertDescription>
-              This is an example alert that could contain important information
-              related to this post.
-            </AlertDescription>
-          </Alert>
-        </div>
-      )}
     </>
   );
 }
