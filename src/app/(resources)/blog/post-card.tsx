@@ -152,7 +152,7 @@ export const PostCard = ({ post }: { post: Post }) => {
       <div className="flex flex-col gap-6 p-5 sm:flex-row sm:items-start">
         <div className="shrink-0">
           <Link
-            href={`/blog/${post.id}`}
+            href={`/blog/${post.slug}`}
             className="block overflow-hidden rounded-md transition-all duration-300"
           >
             <div className="overflow-hidden rounded-md">
@@ -184,7 +184,7 @@ export const PostCard = ({ post }: { post: Post }) => {
           </div>
           <h3 className="font-serif text-xl font-medium tracking-tight lg:text-2xl">
             <Link
-              href={`/blog/${post.id}`}
+              href={`/blog/${post.slug}`}
               className="text-foreground/90 group-hover:text-primary inline-block transition-colors duration-300"
             >
               {post.title}
@@ -194,7 +194,7 @@ export const PostCard = ({ post }: { post: Post }) => {
             {excerpt}
           </p>
           <Link
-            href={`/blog/${post.id}`}
+            href={`/blog/${post.slug}`}
             className="text-primary inline-flex items-center text-sm font-medium opacity-80 transition-all duration-300 hover:translate-x-0.5 hover:opacity-100"
           >
             Read article

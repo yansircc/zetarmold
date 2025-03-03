@@ -18,12 +18,12 @@ import {
 } from './utils/content-utils';
 
 // Function to fetch a single post by slug
-async function fetchPost(id: string): Promise<Post | null> {
+async function fetchPost(slug: string): Promise<Post | null> {
   try {
-    const response = await api.get<Post>(`/posts/${id}`);
+    const response = await api.get<Post>(`/posts/${slug}`);
     return response;
   } catch (error) {
-    console.error(`Failed to fetch post with id ${id}:`, error);
+    console.error(`Failed to fetch post with slug ${slug}:`, error);
     return null;
   }
 }
